@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<vle_project version="0.5" date="mar, 18 nov 2008" author="Eric Ramat">
+ <structures>
+  <model name="m" type="coupled" x="0" y="0" width="1000" height="800" >
+   <submodels>
+    <model name="Root" type="atomic" conditions="" dynamics="Root" observables="" x="286" y="641" width="50" height="190" >
+      <in>
+      </in>
+      <out>
+        <port name="cycle"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="interactionCleanningTimeStep"/>
+        <port name="interactions"/>
+        <port name="distSensorDomainFilePath"/>
+        <port name="distJammerDomainFilePath"/>
+        <port name="networkDefs"/>
+        <port name="jammerDefs"/>
+        <port name="locDefs"/>
+        <port name="networkList"/>
+        <port name="networksPtr"/>
+      </out>
+    </model>
+    <model name="aircraft" type="atomic" conditions="" dynamics="Aircraft" observables="" x="771" y="400" width="100" height="175" >
+      <in>
+        <port name="statusList"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="loc_init"/>
+        <port name="loc_state"/>
+        <port name="extInputList"/>
+        <port name="sideId"/>
+        <port name="SID"/>
+        <port name="NID"/>
+        <port name="TYPE"/>
+        <port name="SUBTYPE"/>
+        <port name="SUBSUBTYPE"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="loc" type="atomic" conditions="" dynamics="Localisation" observables="" x="379" y="505" width="100" height="115" >
+      <in>
+        <port name="loc_init"/>
+        <port name="loc_state"/>
+        <port name="locDefs"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="loc_const_id"/>
+        <port name="loc_const"/>
+        <port name="loc_error"/>
+        <port name="loc_eqp_state"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="mms" type="atomic" conditions="" dynamics="MMS" observables="" x="390" y="53" width="100" height="100" >
+      <in>
+        <port name="loc_state"/>
+        <port name="nav_state"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="mms_msgCategoryId"/>
+        <port name="mms_received"/>
+        <port name="mms_toBeSent"/>
+        <port name="mms_nav_update"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="monitor" type="atomic" conditions="" dynamics="MMSMonitor" observables="" x="382" y="598" width="100" height="100" >
+      <in>
+        <port name="loc_state"/>
+        <port name="nav_state"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="executor" type="atomic" conditions="" dynamics="MMSExecute" observables="" x="165" y="311" width="100" height="70" >
+      <in>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="manager" type="atomic" conditions="" dynamics="MMSManage" observables="" x="740" y="585" width="100" height="70" >
+      <in>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="updater" type="atomic" conditions="" dynamics="MMSUpdate" observables="" x="-18" y="101" width="100" height="70" >
+      <in>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="basicFlying" type="atomic" conditions="" dynamics="BasicFlying" observables="" x="724" y="-32" width="100" height="70" >
+      <in>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="nav" type="atomic" conditions="" dynamics="Navigation" observables="" x="704" y="463" width="100" height="115" >
+      <in>
+        <port name="pstate"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="nav_state"/>
+        <port name="nav_msgCategoryId"/>
+        <port name="nav_received"/>
+        <port name="nav_toBeSent"/>
+        <port name="count"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="flight" type="atomic" conditions="" dynamics="Flight" observables="" x="879" y="146" width="100" height="190" >
+      <in>
+        <port name="loc_init"/>
+        <port name="loc_state"/>
+        <port name="sideId"/>
+        <port name="TYPE"/>
+        <port name="SUBTYPE"/>
+        <port name="interactions"/>
+        <port name="nav_state"/>
+        <port name="mms_nav_update"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="pstate"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="sensors" type="atomic" conditions="" dynamics="Sensors" observables="" x="720" y="160" width="100" height="115" >
+      <in>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="tracks"/>
+        <port name="images"/>
+        <port name="orderCount"/>
+        <port name="ordersList"/>
+        <port name="statusList"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="radar" type="atomic" conditions="" dynamics="Radar" observables="" x="-5" y="195" width="100" height="160" >
+      <in>
+        <port name="ordersList"/>
+        <port name="interactions"/>
+        <port name="distSensorDomainFilePath"/>
+        <port name="distJammerDomainFilePath"/>
+        <port name="tracks"/>
+        <port name="statusList"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="status"/>
+        <port name="sensorId"/>
+        <port name="radarDef"/>
+        <port name="sensorDef"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="esm" type="atomic" conditions="" dynamics="Esm" observables="" x="828" y="30" width="100" height="160" >
+      <in>
+        <port name="ordersList"/>
+        <port name="interactions"/>
+        <port name="distSensorDomainFilePath"/>
+        <port name="distJammerDomainFilePath"/>
+        <port name="tracks"/>
+        <port name="statusList"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="status"/>
+        <port name="sensorId"/>
+        <port name="esmDef"/>
+        <port name="sensorDef"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="autoprot" type="atomic" conditions="" dynamics="Protection" observables="" x="395" y="499" width="100" height="85" >
+      <in>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="jammerStatusList"/>
+        <port name="orderCount"/>
+        <port name="jammerOrderList"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="jammers" type="atomic" conditions="" dynamics="Jammer" observables="" x="33" y="686" width="100" height="130" >
+      <in>
+        <port name="jammerDefs"/>
+        <port name="jammerStatusList"/>
+        <port name="jammerOrderList"/>
+        <port name="interactions"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="status"/>
+        <port name="jammerId"/>
+        <port name="jammerDefId"/>
+        <port name="jammerDef"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="comms" type="atomic" conditions="" dynamics="Communications" observables="" x="826" y="697" width="100" height="175" >
+      <in>
+        <port name="networksPtr"/>
+        <port name="nav_msgCategoryId"/>
+        <port name="nav_toBeSent"/>
+        <port name="nav_received"/>
+        <port name="mms_msgCategoryId"/>
+        <port name="mms_toBeSent"/>
+        <port name="mms_received"/>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="initialized"/>
+        <port name="reports"/>
+        <port name="statusList"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="weapsys" type="atomic" conditions="" dynamics="WeapSys" observables="" x="291" y="698" width="100" height="70" >
+      <in>
+        <port name="NID"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="saSystems" type="atomic" conditions="" dynamics="SASystem" observables="" x="-42" y="-19" width="100" height="190" >
+      <in>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="systemState"/>
+        <port name="statusList"/>
+        <port name="ordersList"/>
+        <port name="tracks"/>
+        <port name="sideId"/>
+        <port name="SID"/>
+        <port name="NID"/>
+        <port name="TYPE"/>
+        <port name="SUBTYPE"/>
+        <port name="SUBSUBTYPE"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+    <model name="components" type="atomic" conditions="" dynamics="SAMComponent" observables="" x="520" y="399" width="100" height="235" >
+      <in>
+        <port name="statusList"/>
+        <port name="ordersList"/>
+        <port name="tracks"/>
+        <port name="interactions"/>
+        <port name="distSensorDomainFilePath"/>
+        <port name="distJammerDomainFilePath"/>
+        <port name="time"/>
+        <port name="timestep"/>
+        <port name="cycle"/>
+      </in>
+      <out>
+        <port name="position"/>
+        <port name="hA"/>
+        <port name="sensorId"/>
+        <port name="sorders"/>
+        <port name="sstatus"/>
+        <port name="radarDef"/>
+        <port name="sensorDef"/>
+        <port name="sideId"/>
+        <port name="SID"/>
+        <port name="NID"/>
+        <port name="TYPE"/>
+        <port name="SUBTYPE"/>
+        <port name="SUBSUBTYPE"/>
+        <port name="bfalse"/>
+        <port name="btrue"/>
+      </out>
+    </model>
+   </submodels>
+   <connections>
+     <connection type="internal">
+       <origin model="comms" port="statusList"/>
+       <destination model="aircraft" port="statusList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="aircraft" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="aircraft" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="aircraft" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="loc_init"/>
+       <destination model="loc" port="loc_init"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="loc_state"/>
+       <destination model="loc" port="loc_state"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="locDefs"/>
+       <destination model="loc" port="locDefs"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="loc" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="loc" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="loc" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="loc" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="loc_state"/>
+       <destination model="mms" port="loc_state"/>
+     </connection>
+     <connection type="internal">
+       <origin model="nav" port="nav_state"/>
+       <destination model="mms" port="nav_state"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="mms" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="mms" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="mms" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="mms" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="loc_state"/>
+       <destination model="monitor" port="loc_state"/>
+     </connection>
+     <connection type="internal">
+       <origin model="nav" port="nav_state"/>
+       <destination model="monitor" port="nav_state"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="monitor" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="monitor" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="monitor" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="monitor" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="executor" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="executor" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="executor" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="executor" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="manager" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="manager" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="manager" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="manager" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="updater" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="updater" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="updater" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="updater" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="basicFlying" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="basicFlying" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="basicFlying" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="basicFlying" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="flight" port="pstate"/>
+       <destination model="nav" port="pstate"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="nav" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="nav" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="nav" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="nav" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="loc_init"/>
+       <destination model="flight" port="loc_init"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="loc_state"/>
+       <destination model="flight" port="loc_state"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="sideId"/>
+       <destination model="flight" port="sideId"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="TYPE"/>
+       <destination model="flight" port="TYPE"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="SUBTYPE"/>
+       <destination model="flight" port="SUBTYPE"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="interactions"/>
+       <destination model="flight" port="interactions"/>
+     </connection>
+     <connection type="internal">
+       <origin model="nav" port="nav_state"/>
+       <destination model="flight" port="nav_state"/>
+     </connection>
+     <connection type="internal">
+       <origin model="mms" port="mms_nav_update"/>
+       <destination model="flight" port="mms_nav_update"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="flight" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="flight" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="flight" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="flight" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="sensors" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="sensors" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="sensors" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="sensors" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="sensors" port="ordersList"/>
+       <destination model="radar" port="ordersList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="interactions"/>
+       <destination model="radar" port="interactions"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="distSensorDomainFilePath"/>
+       <destination model="radar" port="distSensorDomainFilePath"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="distJammerDomainFilePath"/>
+       <destination model="radar" port="distJammerDomainFilePath"/>
+     </connection>
+     <connection type="internal">
+       <origin model="sensors" port="tracks"/>
+       <destination model="radar" port="tracks"/>
+     </connection>
+     <connection type="internal">
+       <origin model="sensors" port="statusList"/>
+       <destination model="radar" port="statusList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="radar" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="radar" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="radar" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="radar" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="sensors" port="ordersList"/>
+       <destination model="esm" port="ordersList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="interactions"/>
+       <destination model="esm" port="interactions"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="distSensorDomainFilePath"/>
+       <destination model="esm" port="distSensorDomainFilePath"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="distJammerDomainFilePath"/>
+       <destination model="esm" port="distJammerDomainFilePath"/>
+     </connection>
+     <connection type="internal">
+       <origin model="sensors" port="tracks"/>
+       <destination model="esm" port="tracks"/>
+     </connection>
+     <connection type="internal">
+       <origin model="sensors" port="statusList"/>
+       <destination model="esm" port="statusList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="esm" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="esm" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="esm" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="esm" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="autoprot" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="autoprot" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="autoprot" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="autoprot" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="jammerDefs"/>
+       <destination model="jammers" port="jammerDefs"/>
+     </connection>
+     <connection type="internal">
+       <origin model="autoprot" port="jammerStatusList"/>
+       <destination model="jammers" port="jammerStatusList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="autoprot" port="jammerOrderList"/>
+       <destination model="jammers" port="jammerOrderList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="interactions"/>
+       <destination model="jammers" port="interactions"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="jammers" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="jammers" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="jammers" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="jammers" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="networksPtr"/>
+       <destination model="comms" port="networksPtr"/>
+     </connection>
+     <connection type="internal">
+       <origin model="nav" port="nav_msgCategoryId"/>
+       <destination model="comms" port="nav_msgCategoryId"/>
+     </connection>
+     <connection type="internal">
+       <origin model="nav" port="nav_toBeSent"/>
+       <destination model="comms" port="nav_toBeSent"/>
+     </connection>
+     <connection type="internal">
+       <origin model="nav" port="nav_received"/>
+       <destination model="comms" port="nav_received"/>
+     </connection>
+     <connection type="internal">
+       <origin model="mms" port="mms_msgCategoryId"/>
+       <destination model="comms" port="mms_msgCategoryId"/>
+     </connection>
+     <connection type="internal">
+       <origin model="mms" port="mms_toBeSent"/>
+       <destination model="comms" port="mms_toBeSent"/>
+     </connection>
+     <connection type="internal">
+       <origin model="mms" port="mms_received"/>
+       <destination model="comms" port="mms_received"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="comms" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="comms" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="comms" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="comms" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="aircraft" port="NID"/>
+       <destination model="weapsys" port="NID"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="weapsys" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="weapsys" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="weapsys" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="saSystems" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="saSystems" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="saSystems" port="cycle"/>
+     </connection>
+     <connection type="internal">
+       <origin model="saSystems" port="statusList"/>
+       <destination model="components" port="statusList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="saSystems" port="ordersList"/>
+       <destination model="components" port="ordersList"/>
+     </connection>
+     <connection type="internal">
+       <origin model="saSystems" port="tracks"/>
+       <destination model="components" port="tracks"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="interactions"/>
+       <destination model="components" port="interactions"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="distSensorDomainFilePath"/>
+       <destination model="components" port="distSensorDomainFilePath"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="distJammerDomainFilePath"/>
+       <destination model="components" port="distJammerDomainFilePath"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="time"/>
+       <destination model="components" port="time"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="timestep"/>
+       <destination model="components" port="timestep"/>
+     </connection>
+     <connection type="internal">
+       <origin model="Root" port="cycle"/>
+       <destination model="components" port="cycle"/>
+     </connection>
+   </connections>
+  </model>
+ </structures>
+ <dynamics>
+  <dynamic name="Model" library="Model" package="generated" type="local" />
+  <dynamic name="Function" library="Function" package="generated" type="local" />
+  <dynamic name="Equipment" library="Equipment" package="generated" type="local" />
+  <dynamic name="SimulationObject" library="SimulationObject" package="generated" type="local" />
+  <dynamic name="Localisation" library="Localisation" package="generated" type="local" />
+  <dynamic name="Flight" library="Flight" package="generated" type="local" />
+  <dynamic name="BasicFlying" library="BasicFlying" package="generated" type="local" />
+  <dynamic name="Navigation" library="Navigation" package="generated" type="local" />
+  <dynamic name="Communications" library="Communications" package="generated" type="local" />
+  <dynamic name="Radar" library="Radar" package="generated" type="local" />
+  <dynamic name="Esm" library="Esm" package="generated" type="local" />
+  <dynamic name="Sensors" library="Sensors" package="generated" type="local" />
+  <dynamic name="Jammer" library="Jammer" package="generated" type="local" />
+  <dynamic name="Protection" library="Protection" package="generated" type="local" />
+  <dynamic name="WeapSys" library="WeapSys" package="generated" type="local" />
+  <dynamic name="MMSMonitor" library="MMSMonitor" package="generated" type="local" />
+  <dynamic name="MMSExecute" library="MMSExecute" package="generated" type="local" />
+  <dynamic name="MMSManage" library="MMSManage" package="generated" type="local" />
+  <dynamic name="MMSUpdate" library="MMSUpdate" package="generated" type="local" />
+  <dynamic name="MMS" library="MMS" package="generated" type="local" />
+  <dynamic name="Aircraft" library="Aircraft" package="generated" type="local" />
+  <dynamic name="SAMComponent" library="SAMComponent" package="generated" type="local" />
+  <dynamic name="SASystem" library="SASystem" package="generated" type="local" />
+  <dynamic name="Root" library="Root" model="" package="generated" type="local"/>
+ </dynamics>
+<experiment name="exp" duration="10.0" begin="0.0" combination="linear" seed="1" >
+<views>
+</views>
+</experiment>
+</vle_project>

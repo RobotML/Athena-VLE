@@ -1,0 +1,1 @@
+INSTALL(FILES config.vpz DESTINATION exp)
