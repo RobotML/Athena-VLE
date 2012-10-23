@@ -132,13 +132,13 @@ public:
             if (event.onPort("nav_toBeSent"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				nav_toBeSent = NetworkMessageList_fromValue(&val);
+				NetworkMessageList_fromValue(&val, nav_toBeSent);
             }
             // 
             if (event.onPort("nav_received"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				nav_received = NetworkMessageList_fromValue(&val);
+				NetworkMessageList_fromValue(&val, nav_received);
             }
             // 
             if (event.onPort("mms_msgCategoryId"))
@@ -150,13 +150,13 @@ public:
             if (event.onPort("mms_toBeSent"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				mms_toBeSent = NetworkMessageList_fromValue(&val);
+				NetworkMessageList_fromValue(&val, mms_toBeSent);
             }
             // 
             if (event.onPort("mms_received"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				mms_received = NetworkMessageList_fromValue(&val);
+				NetworkMessageList_fromValue(&val, mms_received);
             }
 		}
     }

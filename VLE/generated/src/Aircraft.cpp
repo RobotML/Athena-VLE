@@ -113,7 +113,7 @@ public:
             if (event.onPort("commsSL"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				commsSL = EquipmentStatusList_fromValue(&val);
+				EquipmentStatusList_fromValue(&val, commsSL);
             }
 		}
     }

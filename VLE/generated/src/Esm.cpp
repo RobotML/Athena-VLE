@@ -120,7 +120,7 @@ public:
             if (event.onPort("ordersList"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				ordersList = SensorOrders_fromValue(&val);
+				SensorOrders_fromValue(&val, ordersList);
             }
             // 
             if (event.onPort("interactions"))
@@ -144,13 +144,13 @@ public:
             if (event.onPort("tracks"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				tracks = SensorTracks_fromValue(&val);
+				SensorTracks_fromValue(&val, tracks);
             }
             // 
             if (event.onPort("statusList"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				statusList = SensorsStatus_fromValue(&val);
+				SensorsStatus_fromValue(&val, statusList);
             }
 		}
     }

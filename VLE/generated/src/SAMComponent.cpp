@@ -122,19 +122,19 @@ public:
             if (event.onPort("statusList"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				statusList = SAElementStatusList_fromValue(&val);
+				SAElementStatusList_fromValue(&val, statusList);
             }
             // 
             if (event.onPort("ordersList"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				ordersList = SAElementOrderList_fromValue(&val);
+				SAElementOrderList_fromValue(&val, ordersList);
             }
             // 
             if (event.onPort("tracks"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				tracks = SensorTracks_fromValue(&val);
+				SensorTracks_fromValue(&val, tracks);
             }
             // 
             if (event.onPort("interactions"))

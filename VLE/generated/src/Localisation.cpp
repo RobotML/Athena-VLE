@@ -129,7 +129,7 @@ public:
             if (event.onPort("locDefs"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				locDefs = LocDefinitions_fromValue(&val);
+				LocDefinitions_fromValue(&val, locDefs);
             }
 		}
     }

@@ -112,7 +112,7 @@ value::Value* Vec3_toValue(const Vec3& _val) {
 void Vec3_fromValue(const value::Value* _node,Vec3& _val) {
 	const value::Set& _xn = _node->toSet();
 	for(unsigned int _i=0; _i<3; _i++) {
-		Real_fromValue(_xn.get(_i), _val[_i]) ;
+		_val[_i] = Real_fromValue(_xn.get(_i)) ;
 	}
 
 }
@@ -130,7 +130,7 @@ value::Value* Vec5_toValue(const Vec5& _val) {
 void Vec5_fromValue(const value::Value* _node,Vec5& _val) {
 	const value::Set& _xn = _node->toSet();
 	for(unsigned int _i=0; _i<5; _i++) {
-		Real_fromValue(_xn.get(_i), _val[_i]) ;
+		_val[_i] = Real_fromValue(_xn.get(_i)) ;
 	}
 
 }
@@ -181,7 +181,7 @@ value::Value* VecOne_toValue(const VecOne& _val) {
 void VecOne_fromValue(const value::Value* _node,VecOne& _val) {
 	const value::Set& _xn = _node->toSet();
 	for(unsigned int _i=0; _i<_val->num_elements(); _i++) {
-		Real_fromValue(_xn.get(_i), (*_val)[_i]) ;
+		(*_val)[_i] = Real_fromValue(_xn.get(_i)) ;
 	}
 
 }
@@ -199,7 +199,7 @@ value::Value* VecY_toValue(const VecY& _val) {
 void VecY_fromValue(const value::Value* _node,VecY& _val) {
 	const value::Set& _xn = _node->toSet();
 	for(unsigned int _i=0; _i<3; _i++) {
-		Real_fromValue(_xn.get(_i), _val[_i]) ;
+		_val[_i] = Real_fromValue(_xn.get(_i)) ;
 	}
 
 }
@@ -216,8 +216,8 @@ value::Value* test3_toValue(const test3& _val) {
 
 void test3_fromValue(const value::Value* _node, test3& _val) {
 	const value::Map& _xn = _node->toMap();
-	Real_fromValue(_xn.get("hello"), _val.hello);
-	Real_fromValue(_xn.get("g"), _val.g);
+	_val.hello = Real_fromValue(_xn.get("hello"));
+	_val.g = Real_fromValue(_xn.get("g"));
 }
 		
 // -------------------------------------------------------- Ints
@@ -375,8 +375,8 @@ value::Value* EquipmentStatus_toValue(const EquipmentStatus& _val) {
 
 void EquipmentStatus_fromValue(const value::Value* _node, EquipmentStatus& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("id"), _val.id);
+	_val.type = Long_fromValue(_xn.get("type"));
+	_val.id = Long_fromValue(_xn.get("id"));
 	_val.available = Long_fromValue(_xn.get("available"), 100);
 	_val.enabled = Long_fromValue(_xn.get("enabled"), 0);
 }
@@ -420,10 +420,10 @@ value::Value* ExternalInput_toValue(const ExternalInput& _val) {
 
 void ExternalInput_fromValue(const value::Value* _node, ExternalInput& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("id"), _val.id);
-	Long_fromValue(_xn.get("duration"), _val.duration);
-	Long_fromValue(_xn.get("available_during"), _val.available_during);
-	Long_fromValue(_xn.get("available_after"), _val.available_after);
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.duration = Long_fromValue(_xn.get("duration"));
+	_val.available_during = Long_fromValue(_xn.get("available_during"));
+	_val.available_after = Long_fromValue(_xn.get("available_after"));
 }
 		
 // -------------------------------------------------------- vExternalInput
@@ -520,12 +520,12 @@ value::Value* EntityState_toValue(const EntityState& _val) {
 
 void EntityState_fromValue(const value::Value* _node, EntityState& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("time"), _val.time);
-	Long_fromValue(_xn.get("id"), _val.id);
-	Long_fromValue(_xn.get("side"), _val.side);
-	EntityType_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("subtype"), _val.subtype);
-	Long_fromValue(_xn.get("subsubtype"), _val.subsubtype);
+	_val.time = Long_fromValue(_xn.get("time"));
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.side = Long_fromValue(_xn.get("side"));
+	_val.type = EntityType_fromValue(_xn.get("type"));
+	_val.subtype = Long_fromValue(_xn.get("subtype"));
+	_val.subsubtype = Long_fromValue(_xn.get("subsubtype"));
 	Vec3_fromValue(_xn.get("position"), _val.position);
 	Vec3_fromValue(_xn.get("speed"), _val.speed);
 	Vec3_fromValue(_xn.get("attitudes"), _val.attitudes);
@@ -571,10 +571,10 @@ value::Value* EmitterBeam_toValue(const EmitterBeam& _val) {
 
 void EmitterBeam_fromValue(const value::Value* _node, EmitterBeam& _val) {
 	const value::Map& _xn = _node->toMap();
-	Real_fromValue(_xn.get("elevation"), _val.elevation);
-	Real_fromValue(_xn.get("azimut"), _val.azimut);
-	Real_fromValue(_xn.get("elevationAperture"), _val.elevationAperture);
-	Real_fromValue(_xn.get("azimutAperture"), _val.azimutAperture);
+	_val.elevation = Real_fromValue(_xn.get("elevation"));
+	_val.azimut = Real_fromValue(_xn.get("azimut"));
+	_val.elevationAperture = Real_fromValue(_xn.get("elevationAperture"));
+	_val.azimutAperture = Real_fromValue(_xn.get("azimutAperture"));
 	Longs_fromValue(_xn.get("targets"), _val.targets);
 }
 		
@@ -617,11 +617,11 @@ value::Value* EmitterState_toValue(const EmitterState& _val) {
 
 void EmitterState_fromValue(const value::Value* _node, EmitterState& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("time"), _val.time);
-	Long_fromValue(_xn.get("entityID"), _val.entityID);
-	SensorType_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("techno"), _val.techno);
-	Real_fromValue(_xn.get("dist1m2"), _val.dist1m2);
+	_val.time = Long_fromValue(_xn.get("time"));
+	_val.entityID = Long_fromValue(_xn.get("entityID"));
+	_val.type = SensorType_fromValue(_xn.get("type"));
+	_val.techno = Long_fromValue(_xn.get("techno"));
+	_val.dist1m2 = Real_fromValue(_xn.get("dist1m2"));
 	Beams_fromValue(_xn.get("beams"), _val.beams);
 }
 		
@@ -667,15 +667,15 @@ value::Value* JammerState_toValue(const JammerState& _val) {
 
 void JammerState_fromValue(const value::Value* _node, JammerState& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("time"), _val.time);
-	Long_fromValue(_xn.get("entityID"), _val.entityID);
-	Long_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("techno"), _val.techno);
-	Real_fromValue(_xn.get("elevation"), _val.elevation);
-	Real_fromValue(_xn.get("azimut"), _val.azimut);
-	Real_fromValue(_xn.get("apertureEl"), _val.apertureEl);
-	Real_fromValue(_xn.get("apertureAz"), _val.apertureAz);
-	Real_fromValue(_xn.get("powerOrDistance"), _val.powerOrDistance);
+	_val.time = Long_fromValue(_xn.get("time"));
+	_val.entityID = Long_fromValue(_xn.get("entityID"));
+	_val.type = Long_fromValue(_xn.get("type"));
+	_val.techno = Long_fromValue(_xn.get("techno"));
+	_val.elevation = Real_fromValue(_xn.get("elevation"));
+	_val.azimut = Real_fromValue(_xn.get("azimut"));
+	_val.apertureEl = Real_fromValue(_xn.get("apertureEl"));
+	_val.apertureAz = Real_fromValue(_xn.get("apertureAz"));
+	_val.powerOrDistance = Real_fromValue(_xn.get("powerOrDistance"));
 }
 		
 // -------------------------------------------------------- JammerStates
@@ -716,9 +716,9 @@ value::Value* Detonation_toValue(const Detonation& _val) {
 
 void Detonation_fromValue(const value::Value* _node, Detonation& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("time"), _val.time);
-	Long_fromValue(_xn.get("shooterID"), _val.shooterID);
-	Long_fromValue(_xn.get("weaponType"), _val.weaponType);
+	_val.time = Long_fromValue(_xn.get("time"));
+	_val.shooterID = Long_fromValue(_xn.get("shooterID"));
+	_val.weaponType = Long_fromValue(_xn.get("weaponType"));
 	Longs_fromValue(_xn.get("targets"), _val.targets);
 	Vec3_fromValue(_xn.get("position"), _val.position);
 }
@@ -782,11 +782,11 @@ value::Value* AngularBounds_toValue(const AngularBounds& _val) {
 
 void AngularBounds_fromValue(const value::Value* _node, AngularBounds& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("symetric"), _val.symetric);
-	Real_fromValue(_xn.get("elevationMin"), _val.elevationMin);
-	Real_fromValue(_xn.get("elevationMax"), _val.elevationMax);
-	Real_fromValue(_xn.get("azimutMin"), _val.azimutMin);
-	Real_fromValue(_xn.get("azimutMax"), _val.azimutMax);
+	_val.symetric = Long_fromValue(_xn.get("symetric"));
+	_val.elevationMin = Real_fromValue(_xn.get("elevationMin"));
+	_val.elevationMax = Real_fromValue(_xn.get("elevationMax"));
+	_val.azimutMin = Real_fromValue(_xn.get("azimutMin"));
+	_val.azimutMax = Real_fromValue(_xn.get("azimutMax"));
 }
 		
 // -------------------------------------------------------- AngularDelta
@@ -800,8 +800,8 @@ value::Value* AngularDelta_toValue(const AngularDelta& _val) {
 
 void AngularDelta_fromValue(const value::Value* _node, AngularDelta& _val) {
 	const value::Map& _xn = _node->toMap();
-	Real_fromValue(_xn.get("deltaElevation"), _val.deltaElevation);
-	Real_fromValue(_xn.get("deltaAzimut"), _val.deltaAzimut);
+	_val.deltaElevation = Real_fromValue(_xn.get("deltaElevation"));
+	_val.deltaAzimut = Real_fromValue(_xn.get("deltaAzimut"));
 }
 		
 // -------------------------------------------------------- SensorAngularBounds
@@ -870,15 +870,15 @@ value::Value* JammerDefinition_toValue(const JammerDefinition& _val) {
 
 void JammerDefinition_fromValue(const value::Value* _node, JammerDefinition& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("id"), _val.id);
-	Long_fromValue(_xn.get("domainId"), _val.domainId);
-	Long_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("techno"), _val.techno);
-	Real_fromValue(_xn.get("maxPowerAllocation"), _val.maxPowerAllocation);
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.domainId = Long_fromValue(_xn.get("domainId"));
+	_val.type = Long_fromValue(_xn.get("type"));
+	_val.techno = Long_fromValue(_xn.get("techno"));
+	_val.maxPowerAllocation = Real_fromValue(_xn.get("maxPowerAllocation"));
 	AngularBounds_fromValue(_xn.get("bounds"), _val.bounds);
-	Long_fromValue(_xn.get("maxTargetNumber"), _val.maxTargetNumber);
-	Real_fromValue(_xn.get("apertureEl"), _val.apertureEl);
-	Real_fromValue(_xn.get("apertureAz"), _val.apertureAz);
+	_val.maxTargetNumber = Long_fromValue(_xn.get("maxTargetNumber"));
+	_val.apertureEl = Real_fromValue(_xn.get("apertureEl"));
+	_val.apertureAz = Real_fromValue(_xn.get("apertureAz"));
 }
 		
 // -------------------------------------------------------- EmitterJammed
@@ -892,8 +892,8 @@ value::Value* EmitterJammed_toValue(const EmitterJammed& _val) {
 
 void EmitterJammed_fromValue(const value::Value* _node, EmitterJammed& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("entityID"), _val.entityID);
-	Real_fromValue(_xn.get("powerAllocation"), _val.powerAllocation);
+	_val.entityID = Long_fromValue(_xn.get("entityID"));
+	_val.powerAllocation = Real_fromValue(_xn.get("powerAllocation"));
 }
 		
 // -------------------------------------------------------- EmitterJammList
@@ -939,16 +939,16 @@ value::Value* JammerStatus_toValue(const JammerStatus& _val) {
 
 void JammerStatus_fromValue(const value::Value* _node, JammerStatus& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("lastUpdateDate"), _val.lastUpdateDate);
-	Long_fromValue(_xn.get("id"), _val.id);
-	Long_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("techno"), _val.techno);
-	Long_fromValue(_xn.get("available"), _val.available);
-	Long_fromValue(_xn.get("endOfOrderId"), _val.endOfOrderId);
-	Long_fromValue(_xn.get("doingOrderId"), _val.doingOrderId);
-	Long_fromValue(_xn.get("doingOrderDuration"), _val.doingOrderDuration);
-	Long_fromValue(_xn.get("errorFlag"), _val.errorFlag);
-	Long_fromValue(_xn.get("nbrOfJammOps"), _val.nbrOfJammOps);
+	_val.lastUpdateDate = Long_fromValue(_xn.get("lastUpdateDate"));
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.type = Long_fromValue(_xn.get("type"));
+	_val.techno = Long_fromValue(_xn.get("techno"));
+	_val.available = Long_fromValue(_xn.get("available"));
+	_val.endOfOrderId = Long_fromValue(_xn.get("endOfOrderId"));
+	_val.doingOrderId = Long_fromValue(_xn.get("doingOrderId"));
+	_val.doingOrderDuration = Long_fromValue(_xn.get("doingOrderDuration"));
+	_val.errorFlag = Long_fromValue(_xn.get("errorFlag"));
+	_val.nbrOfJammOps = Long_fromValue(_xn.get("nbrOfJammOps"));
 }
 		
 // -------------------------------------------------------- JammersStatus
@@ -989,9 +989,9 @@ value::Value* JammOp_toValue(const JammOp& _val) {
 
 void JammOp_fromValue(const value::Value* _node, JammOp& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("target_id"), _val.target_id);
-	Real_fromValue(_xn.get("azimut"), _val.azimut);
-	Real_fromValue(_xn.get("elevation"), _val.elevation);
+	_val.target_id = Long_fromValue(_xn.get("target_id"));
+	_val.azimut = Real_fromValue(_xn.get("azimut"));
+	_val.elevation = Real_fromValue(_xn.get("elevation"));
 }
 		
 // -------------------------------------------------------- JammOperationList
@@ -1032,10 +1032,10 @@ value::Value* JammerOrder_toValue(const JammerOrder& _val) {
 
 void JammerOrder_fromValue(const value::Value* _node, JammerOrder& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("orderId"), _val.orderId);
-	Long_fromValue(_xn.get("jammerId"), _val.jammerId);
-	Long_fromValue(_xn.get("func"), _val.func);
-	Long_fromValue(_xn.get("duration"), _val.duration);
+	_val.orderId = Long_fromValue(_xn.get("orderId"));
+	_val.jammerId = Long_fromValue(_xn.get("jammerId"));
+	_val.func = Long_fromValue(_xn.get("func"));
+	_val.duration = Long_fromValue(_xn.get("duration"));
 	JammOperationList_fromValue(_xn.get("jammList"), _val.jammList);
 }
 		
@@ -1105,8 +1105,8 @@ value::Value* LocalisationInit_toValue(const LocalisationInit& _val) {
 void LocalisationInit_fromValue(const value::Value* _node, LocalisationInit& _val) {
 	const value::Map& _xn = _node->toMap();
 	Vec3_fromValue(_xn.get("pos"), _val.pos);
-	Real_fromValue(_xn.get("heading"), _val.heading);
-	Real_fromValue(_xn.get("mach"), _val.mach);
+	_val.heading = Real_fromValue(_xn.get("heading"));
+	_val.mach = Real_fromValue(_xn.get("mach"));
 	_val.v = Real_fromValue(_xn.get("v"), 0.);
 }
 		
@@ -1125,12 +1125,12 @@ value::Value* LocalisationConst_toValue(const LocalisationConst& _val) {
 
 void LocalisationConst_fromValue(const value::Value* _node, LocalisationConst& _val) {
 	const value::Map& _xn = _node->toMap();
-	Real_fromValue(_xn.get("irs_deriv"), _val.irs_deriv);
-	Real_fromValue(_xn.get("ralt_factor"), _val.ralt_factor);
-	Real_fromValue(_xn.get("max_dxy_gps"), _val.max_dxy_gps);
-	Real_fromValue(_xn.get("max_dz_gps"), _val.max_dz_gps);
-	Real_fromValue(_xn.get("max_dxy_ter"), _val.max_dxy_ter);
-	Real_fromValue(_xn.get("max_dz_ter"), _val.max_dz_ter);
+	_val.irs_deriv = Real_fromValue(_xn.get("irs_deriv"));
+	_val.ralt_factor = Real_fromValue(_xn.get("ralt_factor"));
+	_val.max_dxy_gps = Real_fromValue(_xn.get("max_dxy_gps"));
+	_val.max_dz_gps = Real_fromValue(_xn.get("max_dz_gps"));
+	_val.max_dxy_ter = Real_fromValue(_xn.get("max_dxy_ter"));
+	_val.max_dz_ter = Real_fromValue(_xn.get("max_dz_ter"));
 }
 		
 // -------------------------------------------------------- LocalisationState
@@ -1148,12 +1148,12 @@ value::Value* LocalisationState_toValue(const LocalisationState& _val) {
 
 void LocalisationState_fromValue(const value::Value* _node, LocalisationState& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("isValid"), _val.isValid);
-	Real_fromValue(_xn.get("mach"), _val.mach);
+	_val.isValid = Long_fromValue(_xn.get("isValid"));
+	_val.mach = Real_fromValue(_xn.get("mach"));
 	Vec3_fromValue(_xn.get("position"), _val.position);
 	Vec3_fromValue(_xn.get("attitudes"), _val.attitudes);
 	Vec3_fromValue(_xn.get("speed"), _val.speed);
-	Real_fromValue(_xn.get("alt_ralt"), _val.alt_ralt);
+	_val.alt_ralt = Real_fromValue(_xn.get("alt_ralt"));
 }
 		
 // -------------------------------------------------------- LocalisationError
@@ -1168,9 +1168,9 @@ value::Value* LocalisationError_toValue(const LocalisationError& _val) {
 
 void LocalisationError_fromValue(const value::Value* _node, LocalisationError& _val) {
 	const value::Map& _xn = _node->toMap();
-	Real_fromValue(_xn.get("incertitude_dxy"), _val.incertitude_dxy);
-	Real_fromValue(_xn.get("incertitude_dz"), _val.incertitude_dz);
-	Real_fromValue(_xn.get("incertitude_ralt"), _val.incertitude_ralt);
+	_val.incertitude_dxy = Real_fromValue(_xn.get("incertitude_dxy"));
+	_val.incertitude_dz = Real_fromValue(_xn.get("incertitude_dz"));
+	_val.incertitude_ralt = Real_fromValue(_xn.get("incertitude_ralt"));
 }
 		
 // -------------------------------------------------------- LocalisationEquipmentState
@@ -1186,10 +1186,10 @@ value::Value* LocalisationEquipmentState_toValue(const LocalisationEquipmentStat
 
 void LocalisationEquipmentState_fromValue(const value::Value* _node, LocalisationEquipmentState& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("gps_available"), _val.gps_available);
-	Long_fromValue(_xn.get("irs_available"), _val.irs_available);
-	Long_fromValue(_xn.get("ralt_available"), _val.ralt_available);
-	Long_fromValue(_xn.get("ternum_available"), _val.ternum_available);
+	_val.gps_available = Long_fromValue(_xn.get("gps_available"));
+	_val.irs_available = Long_fromValue(_xn.get("irs_available"));
+	_val.ralt_available = Long_fromValue(_xn.get("ralt_available"));
+	_val.ternum_available = Long_fromValue(_xn.get("ternum_available"));
 }
 		
 // -------------------------------------------------------- LocDefinitions
@@ -1240,9 +1240,9 @@ value::Value* Waypoint_toValue(const Waypoint& _val) {
 
 void Waypoint_fromValue(const value::Value* _node, Waypoint& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("id"), _val.id);
+	_val.id = Long_fromValue(_xn.get("id"));
 	_val.g = Real_fromValue(_xn.get("g"), 2.);
-	Real_fromValue(_xn.get("heading"), _val.heading);
+	_val.heading = Real_fromValue(_xn.get("heading"));
 	_val.mode = Long_fromValue(_xn.get("mode"), 1);
 	Vec3_fromValue(_xn.get("position"), _val.position);
 	_val.pmax = Real_fromValue(_xn.get("pmax"), 10.);
@@ -1297,15 +1297,15 @@ value::Value* FlightConfig_toValue(const FlightConfig& _val) {
 
 void FlightConfig_fromValue(const value::Value* _node, FlightConfig& _val) {
 	const value::Map& _xn = _node->toMap();
-	Real_fromValue(_xn.get("emptyWeight"), _val.emptyWeight);
-	Real_fromValue(_xn.get("payloadWeight"), _val.payloadWeight);
-	Real_fromValue(_xn.get("fuelWeight"), _val.fuelWeight);
-	Real_fromValue(_xn.get("min_speed"), _val.min_speed);
-	Real_fromValue(_xn.get("max_speed"), _val.max_speed);
-	Real_fromValue(_xn.get("dv"), _val.dv);
-	Long_fromValue(_xn.get("dt"), _val.dt);
-	Real_fromValue(_xn.get("altMin"), _val.altMin);
-	Real_fromValue(_xn.get("altMax"), _val.altMax);
+	_val.emptyWeight = Real_fromValue(_xn.get("emptyWeight"));
+	_val.payloadWeight = Real_fromValue(_xn.get("payloadWeight"));
+	_val.fuelWeight = Real_fromValue(_xn.get("fuelWeight"));
+	_val.min_speed = Real_fromValue(_xn.get("min_speed"));
+	_val.max_speed = Real_fromValue(_xn.get("max_speed"));
+	_val.dv = Real_fromValue(_xn.get("dv"));
+	_val.dt = Long_fromValue(_xn.get("dt"));
+	_val.altMin = Real_fromValue(_xn.get("altMin"));
+	_val.altMax = Real_fromValue(_xn.get("altMax"));
 }
 		
 // -------------------------------------------------------- NavigationUpdate
@@ -1320,8 +1320,8 @@ value::Value* NavigationUpdate_toValue(const NavigationUpdate& _val) {
 
 void NavigationUpdate_fromValue(const value::Value* _node, NavigationUpdate& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("updated"), _val.updated);
-	Long_fromValue(_xn.get("initialIndex"), _val.initialIndex);
+	_val.updated = Long_fromValue(_xn.get("updated"));
+	_val.initialIndex = Long_fromValue(_xn.get("initialIndex"));
 	NavigationPts_fromValue(_xn.get("nav"), _val.nav);
 }
 		
@@ -1340,11 +1340,11 @@ value::Value* NavigationState_toValue(const NavigationState& _val) {
 
 void NavigationState_fromValue(const value::Value* _node, NavigationState& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("nav_updated"), _val.nav_updated);
-	Long_fromValue(_xn.get("oldNavIndex"), _val.oldNavIndex);
-	Long_fromValue(_xn.get("navIndex"), _val.navIndex);
-	Long_fromValue(_xn.get("wpId"), _val.wpId);
-	Real_fromValue(_xn.get("distToNextWaypoint"), _val.distToNextWaypoint);
+	_val.nav_updated = Long_fromValue(_xn.get("nav_updated"));
+	_val.oldNavIndex = Long_fromValue(_xn.get("oldNavIndex"));
+	_val.navIndex = Long_fromValue(_xn.get("navIndex"));
+	_val.wpId = Long_fromValue(_xn.get("wpId"));
+	_val.distToNextWaypoint = Real_fromValue(_xn.get("distToNextWaypoint"));
 	NavigationPts_fromValue(_xn.get("nav"), _val.nav);
 }
 		
@@ -1373,22 +1373,22 @@ value::Value* SStateVector_toValue(const SStateVector& _val) {
 
 void SStateVector_fromValue(const value::Value* _node, SStateVector& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("isValid"), _val.isValid);
-	Long_fromValue(_xn.get("Id"), _val.Id);
-	Long_fromValue(_xn.get("mode"), _val.mode);
-	Real_fromValue(_xn.get("Latitude"), _val.Latitude);
-	Real_fromValue(_xn.get("Longitude"), _val.Longitude);
-	Real_fromValue(_xn.get("Altitude"), _val.Altitude);
-	Real_fromValue(_xn.get("SpeedN"), _val.SpeedN);
-	Real_fromValue(_xn.get("SpeedE"), _val.SpeedE);
-	Real_fromValue(_xn.get("SpeedD"), _val.SpeedD);
-	Real_fromValue(_xn.get("Heading"), _val.Heading);
-	Real_fromValue(_xn.get("Pitch"), _val.Pitch);
-	Real_fromValue(_xn.get("Roll"), _val.Roll);
-	Real_fromValue(_xn.get("Mach"), _val.Mach);
-	Real_fromValue(_xn.get("CAS"), _val.CAS);
-	Long_fromValue(_xn.get("wpID"), _val.wpID);
-	Real_fromValue(_xn.get("wpDist"), _val.wpDist);
+	_val.isValid = Long_fromValue(_xn.get("isValid"));
+	_val.Id = Long_fromValue(_xn.get("Id"));
+	_val.mode = Long_fromValue(_xn.get("mode"));
+	_val.Latitude = Real_fromValue(_xn.get("Latitude"));
+	_val.Longitude = Real_fromValue(_xn.get("Longitude"));
+	_val.Altitude = Real_fromValue(_xn.get("Altitude"));
+	_val.SpeedN = Real_fromValue(_xn.get("SpeedN"));
+	_val.SpeedE = Real_fromValue(_xn.get("SpeedE"));
+	_val.SpeedD = Real_fromValue(_xn.get("SpeedD"));
+	_val.Heading = Real_fromValue(_xn.get("Heading"));
+	_val.Pitch = Real_fromValue(_xn.get("Pitch"));
+	_val.Roll = Real_fromValue(_xn.get("Roll"));
+	_val.Mach = Real_fromValue(_xn.get("Mach"));
+	_val.CAS = Real_fromValue(_xn.get("CAS"));
+	_val.wpID = Long_fromValue(_xn.get("wpID"));
+	_val.wpDist = Real_fromValue(_xn.get("wpDist"));
 }
 		
 // -------------------------------------------------------- SensorTechno
@@ -1402,8 +1402,8 @@ value::Value* SensorTechno_toValue(const SensorTechno& _val) {
 
 void SensorTechno_fromValue(const value::Value* _node, SensorTechno& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("id"), _val.id);
-	Real_fromValue(_xn.get("range"), _val.range);
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.range = Real_fromValue(_xn.get("range"));
 }
 		
 // -------------------------------------------------------- SensorTechnos
@@ -1454,21 +1454,21 @@ value::Value* SensorDefinition_toValue(const SensorDefinition& _val) {
 
 void SensorDefinition_fromValue(const value::Value* _node, SensorDefinition& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("id"), _val.id);
-	SensorType_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("worksWithEntities"), _val.worksWithEntities);
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.type = SensorType_fromValue(_xn.get("type"));
+	_val.worksWithEntities = Long_fromValue(_xn.get("worksWithEntities"));
 	Longs_fromValue(_xn.get("worksWithEntityTypes"), _val.worksWithEntityTypes);
 	SensorTechnos_fromValue(_xn.get("technos"), _val.technos);
-	Long_fromValue(_xn.get("usesLineOfSight"), _val.usesLineOfSight);
+	_val.usesLineOfSight = Long_fromValue(_xn.get("usesLineOfSight"));
 	SensorAngularBounds_fromValue(_xn.get("fieldOfRegard"), _val.fieldOfRegard);
 	SensorAngularDelta_fromValue(_xn.get("fieldOfView"), _val.fieldOfView);
-	Long_fromValue(_xn.get("intervisiType"), _val.intervisiType);
+	_val.intervisiType = Long_fromValue(_xn.get("intervisiType"));
 	Vec3_fromValue(_xn.get("resolution"), _val.resolution);
-	Long_fromValue(_xn.get("toBeAcquiredDuration"), _val.toBeAcquiredDuration);
-	Long_fromValue(_xn.get("toBeLostDuration"), _val.toBeLostDuration);
-	Long_fromValue(_xn.get("canBeJammed"), _val.canBeJammed);
-	Long_fromValue(_xn.get("historyLenght"), _val.historyLenght);
-	Long_fromValue(_xn.get("isEmitter"), _val.isEmitter);
+	_val.toBeAcquiredDuration = Long_fromValue(_xn.get("toBeAcquiredDuration"));
+	_val.toBeLostDuration = Long_fromValue(_xn.get("toBeLostDuration"));
+	_val.canBeJammed = Long_fromValue(_xn.get("canBeJammed"));
+	_val.historyLenght = Long_fromValue(_xn.get("historyLenght"));
+	_val.isEmitter = Long_fromValue(_xn.get("isEmitter"));
 }
 		
 // -------------------------------------------------------- RadarDefinition
@@ -1490,16 +1490,16 @@ value::Value* RadarDefinition_toValue(const RadarDefinition& _val) {
 
 void RadarDefinition_fromValue(const value::Value* _node, RadarDefinition& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("bandID"), _val.bandID);
-	Real_fromValue(_xn.get("range"), _val.range);
-	Real_fromValue(_xn.get("fov_deltaElevation"), _val.fov_deltaElevation);
-	Real_fromValue(_xn.get("fov_deltaAzimut"), _val.fov_deltaAzimut);
-	Real_fromValue(_xn.get("for_elevationMin"), _val.for_elevationMin);
-	Real_fromValue(_xn.get("for_elevationMax"), _val.for_elevationMax);
-	Real_fromValue(_xn.get("for_azimutMin"), _val.for_azimutMin);
-	Real_fromValue(_xn.get("for_azimutMax"), _val.for_azimutMax);
-	Long_fromValue(_xn.get("toBeAcquiredDuration"), _val.toBeAcquiredDuration);
-	Long_fromValue(_xn.get("toBeLostDuration"), _val.toBeLostDuration);
+	_val.bandID = Long_fromValue(_xn.get("bandID"));
+	_val.range = Real_fromValue(_xn.get("range"));
+	_val.fov_deltaElevation = Real_fromValue(_xn.get("fov_deltaElevation"));
+	_val.fov_deltaAzimut = Real_fromValue(_xn.get("fov_deltaAzimut"));
+	_val.for_elevationMin = Real_fromValue(_xn.get("for_elevationMin"));
+	_val.for_elevationMax = Real_fromValue(_xn.get("for_elevationMax"));
+	_val.for_azimutMin = Real_fromValue(_xn.get("for_azimutMin"));
+	_val.for_azimutMax = Real_fromValue(_xn.get("for_azimutMax"));
+	_val.toBeAcquiredDuration = Long_fromValue(_xn.get("toBeAcquiredDuration"));
+	_val.toBeLostDuration = Long_fromValue(_xn.get("toBeLostDuration"));
 }
 		
 // -------------------------------------------------------- EsmDefinition
@@ -1521,16 +1521,16 @@ value::Value* EsmDefinition_toValue(const EsmDefinition& _val) {
 
 void EsmDefinition_fromValue(const value::Value* _node, EsmDefinition& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("bandID"), _val.bandID);
-	Real_fromValue(_xn.get("range"), _val.range);
-	Real_fromValue(_xn.get("fov_deltaElevation"), _val.fov_deltaElevation);
-	Real_fromValue(_xn.get("fov_deltaAzimut"), _val.fov_deltaAzimut);
-	Real_fromValue(_xn.get("for_elevationMin"), _val.for_elevationMin);
-	Real_fromValue(_xn.get("for_elevationMax"), _val.for_elevationMax);
-	Real_fromValue(_xn.get("for_azimutMin"), _val.for_azimutMin);
-	Real_fromValue(_xn.get("for_azimutMax"), _val.for_azimutMax);
-	Long_fromValue(_xn.get("toBeAcquiredDuration"), _val.toBeAcquiredDuration);
-	Long_fromValue(_xn.get("toBeLostDuration"), _val.toBeLostDuration);
+	_val.bandID = Long_fromValue(_xn.get("bandID"));
+	_val.range = Real_fromValue(_xn.get("range"));
+	_val.fov_deltaElevation = Real_fromValue(_xn.get("fov_deltaElevation"));
+	_val.fov_deltaAzimut = Real_fromValue(_xn.get("fov_deltaAzimut"));
+	_val.for_elevationMin = Real_fromValue(_xn.get("for_elevationMin"));
+	_val.for_elevationMax = Real_fromValue(_xn.get("for_elevationMax"));
+	_val.for_azimutMin = Real_fromValue(_xn.get("for_azimutMin"));
+	_val.for_azimutMax = Real_fromValue(_xn.get("for_azimutMax"));
+	_val.toBeAcquiredDuration = Long_fromValue(_xn.get("toBeAcquiredDuration"));
+	_val.toBeLostDuration = Long_fromValue(_xn.get("toBeLostDuration"));
 }
 		
 // -------------------------------------------------------- SensorPlot
@@ -1550,13 +1550,13 @@ value::Value* SensorPlot_toValue(const SensorPlot& _val) {
 
 void SensorPlot_fromValue(const value::Value* _node, SensorPlot& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("date"), _val.date);
-	Long_fromValue(_xn.get("sourceId"), _val.sourceId);
-	SensorType_fromValue(_xn.get("sourceType"), _val.sourceType);
-	Long_fromValue(_xn.get("sourceTechno"), _val.sourceTechno);
-	Real_fromValue(_xn.get("elevation"), _val.elevation);
-	Real_fromValue(_xn.get("azimut"), _val.azimut);
-	Real_fromValue(_xn.get("distance"), _val.distance);
+	_val.date = Long_fromValue(_xn.get("date"));
+	_val.sourceId = Long_fromValue(_xn.get("sourceId"));
+	_val.sourceType = SensorType_fromValue(_xn.get("sourceType"));
+	_val.sourceTechno = Long_fromValue(_xn.get("sourceTechno"));
+	_val.elevation = Real_fromValue(_xn.get("elevation"));
+	_val.azimut = Real_fromValue(_xn.get("azimut"));
+	_val.distance = Real_fromValue(_xn.get("distance"));
 	Vec3_fromValue(_xn.get("position"), _val.position);
 }
 		
@@ -1641,15 +1641,15 @@ value::Value* SensorTrack_toValue(const SensorTrack& _val) {
 
 void SensorTrack_fromValue(const value::Value* _node, SensorTrack& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("targetId"), _val.targetId);
-	Long_fromValue(_xn.get("lastUpdateDate"), _val.lastUpdateDate);
+	_val.targetId = Long_fromValue(_xn.get("targetId"));
+	_val.lastUpdateDate = Long_fromValue(_xn.get("lastUpdateDate"));
 	SensorPlotVector_fromValue(_xn.get("plots"), _val.plots);
-	Long_fromValue(_xn.get("tracked"), _val.tracked);
-	Long_fromValue(_xn.get("detected"), _val.detected);
-	Long_fromValue(_xn.get("trackTime"), _val.trackTime);
-	Real_fromValue(_xn.get("deltaAzimut"), _val.deltaAzimut);
-	Real_fromValue(_xn.get("deltaElevation"), _val.deltaElevation);
-	Long_fromValue(_xn.get("doNotFollow"), _val.doNotFollow);
+	_val.tracked = Long_fromValue(_xn.get("tracked"));
+	_val.detected = Long_fromValue(_xn.get("detected"));
+	_val.trackTime = Long_fromValue(_xn.get("trackTime"));
+	_val.deltaAzimut = Real_fromValue(_xn.get("deltaAzimut"));
+	_val.deltaElevation = Real_fromValue(_xn.get("deltaElevation"));
+	_val.doNotFollow = Long_fromValue(_xn.get("doNotFollow"));
 }
 		
 // -------------------------------------------------------- SensorTracks
@@ -1695,14 +1695,14 @@ value::Value* SensorStatus_toValue(const SensorStatus& _val) {
 
 void SensorStatus_fromValue(const value::Value* _node, SensorStatus& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("lastUpdateDate"), _val.lastUpdateDate);
-	Long_fromValue(_xn.get("id"), _val.id);
-	SensorType_fromValue(_xn.get("type"), _val.type);
-	Long_fromValue(_xn.get("available"), _val.available);
-	Long_fromValue(_xn.get("doingOrderId"), _val.doingOrderId);
-	Long_fromValue(_xn.get("doingOrderDuration"), _val.doingOrderDuration);
-	Long_fromValue(_xn.get("endOfOrderId"), _val.endOfOrderId);
-	Long_fromValue(_xn.get("errorFlag"), _val.errorFlag);
+	_val.lastUpdateDate = Long_fromValue(_xn.get("lastUpdateDate"));
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.type = SensorType_fromValue(_xn.get("type"));
+	_val.available = Long_fromValue(_xn.get("available"));
+	_val.doingOrderId = Long_fromValue(_xn.get("doingOrderId"));
+	_val.doingOrderDuration = Long_fromValue(_xn.get("doingOrderDuration"));
+	_val.endOfOrderId = Long_fromValue(_xn.get("endOfOrderId"));
+	_val.errorFlag = Long_fromValue(_xn.get("errorFlag"));
 }
 		
 // -------------------------------------------------------- SensorsStatus
@@ -1748,14 +1748,14 @@ value::Value* SensorOrder_toValue(const SensorOrder& _val) {
 
 void SensorOrder_fromValue(const value::Value* _node, SensorOrder& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("orderId"), _val.orderId);
-	Long_fromValue(_xn.get("sensorId"), _val.sensorId);
-	SensorFunction_fromValue(_xn.get("func"), _val.func);
-	Long_fromValue(_xn.get("fieldOfRegardNbr"), _val.fieldOfRegardNbr);
-	Long_fromValue(_xn.get("fieldOfViewNbr"), _val.fieldOfViewNbr);
-	Real_fromValue(_xn.get("lineOfSightElevation"), _val.lineOfSightElevation);
-	Real_fromValue(_xn.get("lineOfSightAzimut"), _val.lineOfSightAzimut);
-	Long_fromValue(_xn.get("duration"), _val.duration);
+	_val.orderId = Long_fromValue(_xn.get("orderId"));
+	_val.sensorId = Long_fromValue(_xn.get("sensorId"));
+	_val.func = SensorFunction_fromValue(_xn.get("func"));
+	_val.fieldOfRegardNbr = Long_fromValue(_xn.get("fieldOfRegardNbr"));
+	_val.fieldOfViewNbr = Long_fromValue(_xn.get("fieldOfViewNbr"));
+	_val.lineOfSightElevation = Real_fromValue(_xn.get("lineOfSightElevation"));
+	_val.lineOfSightAzimut = Real_fromValue(_xn.get("lineOfSightAzimut"));
+	_val.duration = Long_fromValue(_xn.get("duration"));
 }
 		
 // -------------------------------------------------------- SensorOrders
@@ -1808,21 +1808,21 @@ value::Value* SGD_toValue(const SGD& _val) {
 
 void SGD_fromValue(const value::Value* _node, SGD& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("hasAB"), _val.hasAB);
-	Long_fromValue(_xn.get("hasBA"), _val.hasBA);
-	Long_fromValue(_xn.get("hasBA_RL"), _val.hasBA_RL);
-	Long_fromValue(_xn.get("hasDist"), _val.hasDist);
-	Long_fromValue(_xn.get("hasIvisi"), _val.hasIvisi);
-	Real_fromValue(_xn.get("siteAB"), _val.siteAB);
-	Real_fromValue(_xn.get("giseAB"), _val.giseAB);
-	Real_fromValue(_xn.get("siteBA"), _val.siteBA);
-	Real_fromValue(_xn.get("giseBA"), _val.giseBA);
-	Real_fromValue(_xn.get("siteBA_RL"), _val.siteBA_RL);
-	Real_fromValue(_xn.get("giseBA_RL"), _val.giseBA_RL);
-	Real_fromValue(_xn.get("dist"), _val.dist);
-	Long_fromValue(_xn.get("ivisi"), _val.ivisi);
-	Long_fromValue(_xn.get("techno"), _val.techno);
-	Real_fromValue(_xn.get("range"), _val.range);
+	_val.hasAB = Long_fromValue(_xn.get("hasAB"));
+	_val.hasBA = Long_fromValue(_xn.get("hasBA"));
+	_val.hasBA_RL = Long_fromValue(_xn.get("hasBA_RL"));
+	_val.hasDist = Long_fromValue(_xn.get("hasDist"));
+	_val.hasIvisi = Long_fromValue(_xn.get("hasIvisi"));
+	_val.siteAB = Real_fromValue(_xn.get("siteAB"));
+	_val.giseAB = Real_fromValue(_xn.get("giseAB"));
+	_val.siteBA = Real_fromValue(_xn.get("siteBA"));
+	_val.giseBA = Real_fromValue(_xn.get("giseBA"));
+	_val.siteBA_RL = Real_fromValue(_xn.get("siteBA_RL"));
+	_val.giseBA_RL = Real_fromValue(_xn.get("giseBA_RL"));
+	_val.dist = Real_fromValue(_xn.get("dist"));
+	_val.ivisi = Long_fromValue(_xn.get("ivisi"));
+	_val.techno = Long_fromValue(_xn.get("techno"));
+	_val.range = Real_fromValue(_xn.get("range"));
 }
 		
 // -------------------------------------------------------- SensorMemory
@@ -1901,7 +1901,7 @@ void SAElementStatus_fromValue(const value::Value* _node, SAElementStatus& _val)
 	Vec3_fromValue(_xn.get("pos"), _val.pos);
 	_val.date = Long_fromValue(_xn.get("date"), 0);
 	_val.status = Long_fromValue(_xn.get("status"), 0);
-	Long_fromValue(_xn.get("targetId"), _val.targetId);
+	_val.targetId = Long_fromValue(_xn.get("targetId"));
 	_val.munition = Long_fromValue(_xn.get("munition"), 0);
 	_val.updated = Long_fromValue(_xn.get("updated"), 0);
 }
@@ -1945,10 +1945,10 @@ value::Value* SAElementOrder_toValue(const SAElementOrder& _val) {
 
 void SAElementOrder_fromValue(const value::Value* _node, SAElementOrder& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("nid"), _val.nid);
-	Long_fromValue(_xn.get("orderId"), _val.orderId);
-	Long_fromValue(_xn.get("order"), _val.order);
-	Long_fromValue(_xn.get("targetId"), _val.targetId);
+	_val.nid = Long_fromValue(_xn.get("nid"));
+	_val.orderId = Long_fromValue(_xn.get("orderId"));
+	_val.order = Long_fromValue(_xn.get("order"));
+	_val.targetId = Long_fromValue(_xn.get("targetId"));
 }
 		
 // -------------------------------------------------------- SAElementOrderList
@@ -2022,7 +2022,7 @@ void FlightData_fromValue(const value::Value* _node, FlightData& _val) {
 	Vec3_fromValue(_xn.get("position"), _val.position);
 	Vec3_fromValue(_xn.get("speed"), _val.speed);
 	Vec3_fromValue(_xn.get("attitudes"), _val.attitudes);
-	Long_fromValue(_xn.get("date"), _val.date);
+	_val.date = Long_fromValue(_xn.get("date"));
 }
 		
 // -------------------------------------------------------- NavigationData
@@ -2044,9 +2044,9 @@ void NavigationData_fromValue(const value::Value* _node, NavigationData& _val) {
 	Vec3_fromValue(_xn.get("position"), _val.position);
 	Vec3_fromValue(_xn.get("speed"), _val.speed);
 	Vec3_fromValue(_xn.get("attitudes"), _val.attitudes);
-	Long_fromValue(_xn.get("date"), _val.date);
-	Long_fromValue(_xn.get("wpId"), _val.wpId);
-	Real_fromValue(_xn.get("distToNextWaypoint"), _val.distToNextWaypoint);
+	_val.date = Long_fromValue(_xn.get("date"));
+	_val.wpId = Long_fromValue(_xn.get("wpId"));
+	_val.distToNextWaypoint = Real_fromValue(_xn.get("distToNextWaypoint"));
 	NavigationPts_fromValue(_xn.get("nav"), _val.nav);
 }
 		
@@ -2070,17 +2070,17 @@ value::Value* NetworkDefinition_toValue(const NetworkDefinition& _val) {
 
 void NetworkDefinition_fromValue(const value::Value* _node, NetworkDefinition& _val) {
 	const value::Map& _xn = _node->toMap();
-	String_fromValue(_xn.get("name"), _val.name);
-	Long_fromValue(_xn.get("id"), _val.id);
-	Long_fromValue(_xn.get("isBLOS"), _val.isBLOS);
-	Real_fromValue(_xn.get("maxDist"), _val.maxDist);
-	Real_fromValue(_xn.get("networkBandwidth"), _val.networkBandwidth);
-	Long_fromValue(_xn.get("maxSendConnectionPerAccess"), _val.maxSendConnectionPerAccess);
-	Long_fromValue(_xn.get("maxRcvConnectionPerAccess"), _val.maxRcvConnectionPerAccess);
-	Real_fromValue(_xn.get("maxSendBandwidthPerConnection"), _val.maxSendBandwidthPerConnection);
-	Real_fromValue(_xn.get("maxRcvBandwidthPerAccess"), _val.maxRcvBandwidthPerAccess);
-	Long_fromValue(_xn.get("maxConnectionInNetwork"), _val.maxConnectionInNetwork);
-	Long_fromValue(_xn.get("maxNumberOfAccess"), _val.maxNumberOfAccess);
+	_val.name = String_fromValue(_xn.get("name"));
+	_val.id = Long_fromValue(_xn.get("id"));
+	_val.isBLOS = Long_fromValue(_xn.get("isBLOS"));
+	_val.maxDist = Real_fromValue(_xn.get("maxDist"));
+	_val.networkBandwidth = Real_fromValue(_xn.get("networkBandwidth"));
+	_val.maxSendConnectionPerAccess = Long_fromValue(_xn.get("maxSendConnectionPerAccess"));
+	_val.maxRcvConnectionPerAccess = Long_fromValue(_xn.get("maxRcvConnectionPerAccess"));
+	_val.maxSendBandwidthPerConnection = Real_fromValue(_xn.get("maxSendBandwidthPerConnection"));
+	_val.maxRcvBandwidthPerAccess = Real_fromValue(_xn.get("maxRcvBandwidthPerAccess"));
+	_val.maxConnectionInNetwork = Long_fromValue(_xn.get("maxConnectionInNetwork"));
+	_val.maxNumberOfAccess = Long_fromValue(_xn.get("maxNumberOfAccess"));
 }
 		
 // -------------------------------------------------------- NetworkMessagePrivateHeader
@@ -2094,8 +2094,8 @@ value::Value* NetworkMessagePrivateHeader_toValue(const NetworkMessagePrivateHea
 
 void NetworkMessagePrivateHeader_fromValue(const value::Value* _node, NetworkMessagePrivateHeader& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("timestamp"), _val.timestamp);
-	Real_fromValue(_xn.get("sizeTransmitted"), _val.sizeTransmitted);
+	_val.timestamp = Long_fromValue(_xn.get("timestamp"));
+	_val.sizeTransmitted = Real_fromValue(_xn.get("sizeTransmitted"));
 }
 		
 // -------------------------------------------------------- NetworkMessageUserHeader
@@ -2113,17 +2113,17 @@ value::Value* NetworkMessageUserHeader_toValue(const NetworkMessageUserHeader& _
 
 void NetworkMessageUserHeader_fromValue(const value::Value* _node, NetworkMessageUserHeader& _val) {
 	const value::Map& _xn = _node->toMap();
-	NetworkID_fromValue(_xn.get("networkId"), _val.networkId);
-	Long_fromValue(_xn.get("fromId"), _val.fromId);
-	Long_fromValue(_xn.get("toId"), _val.toId);
-	Long_fromValue(_xn.get("networkMsgId"), _val.networkMsgId);
-	Long_fromValue(_xn.get("dataSize"), _val.dataSize);
-	Long_fromValue(_xn.get("category"), _val.category);
+	_val.networkId = NetworkID_fromValue(_xn.get("networkId"));
+	_val.fromId = Long_fromValue(_xn.get("fromId"));
+	_val.toId = Long_fromValue(_xn.get("toId"));
+	_val.networkMsgId = Long_fromValue(_xn.get("networkMsgId"));
+	_val.dataSize = Long_fromValue(_xn.get("dataSize"));
+	_val.category = Long_fromValue(_xn.get("category"));
 }
 		
 // -------------------------------------------------------- NetworkMessageUserData
 ///
-/// ERROR NetworkMessageUserData is unrecognized by the generator - org.eclipse.emf.ecore.impl.EClassImpl@188e507 (name: unionType) (instanceClassName: null) (abstract: false, interface: false)
+/// ERROR NetworkMessageUserData is unrecognized by the generator - org.eclipse.emf.ecore.impl.EClassImpl@12297aa (name: unionType) (instanceClassName: null) (abstract: false, interface: false)
 ///
 		
 // -------------------------------------------------------- NetworkMessage
@@ -2282,8 +2282,8 @@ value::Value* test_toValue(const test& _val) {
 
 void test_fromValue(const value::Value* _node, test& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("fromId"), _val.fromId);
-	Long_fromValue(_xn.get("toId"), _val.toId);
+	_val.fromId = Long_fromValue(_xn.get("fromId"));
+	_val.toId = Long_fromValue(_xn.get("toId"));
 }
 		
 // -------------------------------------------------------- TestMatlabStruct2
@@ -2298,9 +2298,9 @@ value::Value* TestMatlabStruct2_toValue(const TestMatlabStruct2& _val) {
 
 void TestMatlabStruct2_fromValue(const value::Value* _node, TestMatlabStruct2& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("i"), _val.i);
-	Long_fromValue(_xn.get("j"), _val.j);
-	Real_fromValue(_xn.get("x"), _val.x);
+	_val.i = Long_fromValue(_xn.get("i"));
+	_val.j = Long_fromValue(_xn.get("j"));
+	_val.x = Real_fromValue(_xn.get("x"));
 }
 		
 // -------------------------------------------------------- TestMatlabStruct2List
@@ -2341,8 +2341,8 @@ value::Value* TestMatlabStruct_toValue(const TestMatlabStruct& _val) {
 
 void TestMatlabStruct_fromValue(const value::Value* _node, TestMatlabStruct& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("unLong"), _val.unLong);
-	Real_fromValue(_xn.get("unReal"), _val.unReal);
+	_val.unLong = Long_fromValue(_xn.get("unLong"));
+	_val.unReal = Real_fromValue(_xn.get("unReal"));
 	Vec3_fromValue(_xn.get("unVec3"), _val.unVec3);
 	Longs_fromValue(_xn.get("unVecteurDeLongs"), _val.unVecteurDeLongs);
 	TestMatlabStruct2List_fromValue(_xn.get("uneListe"), _val.uneListe);
@@ -2360,9 +2360,9 @@ value::Value* TestJavaStruct2_toValue(const TestJavaStruct2& _val) {
 
 void TestJavaStruct2_fromValue(const value::Value* _node, TestJavaStruct2& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("i"), _val.i);
-	Long_fromValue(_xn.get("j"), _val.j);
-	Real_fromValue(_xn.get("x"), _val.x);
+	_val.i = Long_fromValue(_xn.get("i"));
+	_val.j = Long_fromValue(_xn.get("j"));
+	_val.x = Real_fromValue(_xn.get("x"));
 }
 		
 // -------------------------------------------------------- TestJavaStruct2List
@@ -2404,8 +2404,8 @@ value::Value* TestJavaStruct_toValue(const TestJavaStruct& _val) {
 
 void TestJavaStruct_fromValue(const value::Value* _node, TestJavaStruct& _val) {
 	const value::Map& _xn = _node->toMap();
-	Long_fromValue(_xn.get("unLong"), _val.unLong);
-	Real_fromValue(_xn.get("unReal"), _val.unReal);
+	_val.unLong = Long_fromValue(_xn.get("unLong"));
+	_val.unReal = Real_fromValue(_xn.get("unReal"));
 	Vec3_fromValue(_xn.get("unVec3"), _val.unVec3);
 	VecX_fromValue(_xn.get("unVecX"), _val.unVecX);
 	Longs_fromValue(_xn.get("unVecteurDeLongs"), _val.unVecteurDeLongs);

@@ -96,17 +96,17 @@ void test3_fromValue(const value::Value* _node, test3& _val);
 // -------------------------------------------------------- Ints
 // Ints is a vector of Int
 value::Value* Ints_toValue(const Ints& _val); 
-Ints Ints_fromValue(const value::Value* _node);
+void Ints_fromValue(const value::Value* _node, Ints& _val);
 		
 // -------------------------------------------------------- Longs
 // Longs is a vector of Long
 value::Value* Longs_toValue(const Longs& _val); 
-Longs Longs_fromValue(const value::Value* _node);
+void Longs_fromValue(const value::Value* _node, Longs& _val);
 		
 // -------------------------------------------------------- Reals
 // Reals is a vector of Real
 value::Value* Reals_toValue(const Reals& _val); 
-Reals Reals_fromValue(const value::Value* _node);
+void Reals_fromValue(const value::Value* _node, Reals& _val);
 		
 // -------------------------------------------------------- EntityType
 // basic type EntityType	
@@ -146,7 +146,7 @@ void EquipmentStatus_fromValue(const value::Value* _node, EquipmentStatus& _val)
 // -------------------------------------------------------- EquipmentStatusList
 // EquipmentStatusList is a map with key type Long and value type EquipmentStatus
 value::Value* EquipmentStatusList_toValue(const EquipmentStatusList& _val);
-EquipmentStatusList EquipmentStatusList_fromValue(const value::Value* _node);
+void EquipmentStatusList_fromValue(const value::Value* _node, EquipmentStatusList& _val);
 		
 // -------------------------------------------------------- ExternalInput
 // ExternalInput is a structure
@@ -156,17 +156,17 @@ void ExternalInput_fromValue(const value::Value* _node, ExternalInput& _val);
 // -------------------------------------------------------- vExternalInput
 // vExternalInput is a vector of ExternalInput
 value::Value* vExternalInput_toValue(const vExternalInput& _val); 
-vExternalInput vExternalInput_fromValue(const value::Value* _node);
+void vExternalInput_fromValue(const value::Value* _node, vExternalInput& _val);
 		
 // -------------------------------------------------------- ExternalInputListForOneTypeOfEquipment
 // ExternalInputListForOneTypeOfEquipment is a map with key type EquipmentType and value type vExternalInput
 value::Value* ExternalInputListForOneTypeOfEquipment_toValue(const ExternalInputListForOneTypeOfEquipment& _val);
-ExternalInputListForOneTypeOfEquipment ExternalInputListForOneTypeOfEquipment_fromValue(const value::Value* _node);
+void ExternalInputListForOneTypeOfEquipment_fromValue(const value::Value* _node, ExternalInputListForOneTypeOfEquipment& _val);
 		
 // -------------------------------------------------------- ExternalInputList
 // ExternalInputList is a map with key type Long and value type ExternalInputListForOneTypeOfEquipment
 value::Value* ExternalInputList_toValue(const ExternalInputList& _val);
-ExternalInputList ExternalInputList_fromValue(const value::Value* _node);
+void ExternalInputList_fromValue(const value::Value* _node, ExternalInputList& _val);
 		
 // -------------------------------------------------------- EntityState
 // EntityState is a structure
@@ -176,7 +176,7 @@ void EntityState_fromValue(const value::Value* _node, EntityState& _val);
 // -------------------------------------------------------- EntityStates
 // EntityStates is a map with key type Long and value type EntityState
 value::Value* EntityStates_toValue(const EntityStates& _val);
-EntityStates EntityStates_fromValue(const value::Value* _node);
+void EntityStates_fromValue(const value::Value* _node, EntityStates& _val);
 		
 // -------------------------------------------------------- EmitterBeam
 // EmitterBeam is a structure
@@ -186,7 +186,7 @@ void EmitterBeam_fromValue(const value::Value* _node, EmitterBeam& _val);
 // -------------------------------------------------------- Beams
 // Beams is a vector of EmitterBeam
 value::Value* Beams_toValue(const Beams& _val); 
-Beams Beams_fromValue(const value::Value* _node);
+void Beams_fromValue(const value::Value* _node, Beams& _val);
 		
 // -------------------------------------------------------- EmitterState
 // EmitterState is a structure
@@ -196,7 +196,7 @@ void EmitterState_fromValue(const value::Value* _node, EmitterState& _val);
 // -------------------------------------------------------- EmitterStates
 // EmitterStates is a vector of EmitterState
 value::Value* EmitterStates_toValue(const EmitterStates& _val); 
-EmitterStates EmitterStates_fromValue(const value::Value* _node);
+void EmitterStates_fromValue(const value::Value* _node, EmitterStates& _val);
 		
 // -------------------------------------------------------- JammerState
 // JammerState is a structure
@@ -206,7 +206,7 @@ void JammerState_fromValue(const value::Value* _node, JammerState& _val);
 // -------------------------------------------------------- JammerStates
 // JammerStates is a vector of JammerState
 value::Value* JammerStates_toValue(const JammerStates& _val); 
-JammerStates JammerStates_fromValue(const value::Value* _node);
+void JammerStates_fromValue(const value::Value* _node, JammerStates& _val);
 		
 // -------------------------------------------------------- Detonation
 // Detonation is a structure
@@ -216,7 +216,7 @@ void Detonation_fromValue(const value::Value* _node, Detonation& _val);
 // -------------------------------------------------------- Detonations
 // Detonations is a map with key type Long and value type Detonation
 value::Value* Detonations_toValue(const Detonations& _val);
-Detonations Detonations_fromValue(const value::Value* _node);
+void Detonations_fromValue(const value::Value* _node, Detonations& _val);
 		
 // -------------------------------------------------------- EnvironmentInteractions
 // EnvironmentInteractions is a structure
@@ -236,12 +236,12 @@ void AngularDelta_fromValue(const value::Value* _node, AngularDelta& _val);
 // -------------------------------------------------------- SensorAngularBounds
 // SensorAngularBounds is a vector of AngularBounds
 value::Value* SensorAngularBounds_toValue(const SensorAngularBounds& _val); 
-SensorAngularBounds SensorAngularBounds_fromValue(const value::Value* _node);
+void SensorAngularBounds_fromValue(const value::Value* _node, SensorAngularBounds& _val);
 		
 // -------------------------------------------------------- SensorAngularDelta
 // SensorAngularDelta is a vector of AngularDelta
 value::Value* SensorAngularDelta_toValue(const SensorAngularDelta& _val); 
-SensorAngularDelta SensorAngularDelta_fromValue(const value::Value* _node);
+void SensorAngularDelta_fromValue(const value::Value* _node, SensorAngularDelta& _val);
 		
 // -------------------------------------------------------- JammerDefinition
 // JammerDefinition is a structure
@@ -256,7 +256,7 @@ void EmitterJammed_fromValue(const value::Value* _node, EmitterJammed& _val);
 // -------------------------------------------------------- EmitterJammList
 // EmitterJammList is a vector of EmitterJammed
 value::Value* EmitterJammList_toValue(const EmitterJammList& _val); 
-EmitterJammList EmitterJammList_fromValue(const value::Value* _node);
+void EmitterJammList_fromValue(const value::Value* _node, EmitterJammList& _val);
 		
 // -------------------------------------------------------- JammerStatus
 // JammerStatus is a structure
@@ -266,7 +266,7 @@ void JammerStatus_fromValue(const value::Value* _node, JammerStatus& _val);
 // -------------------------------------------------------- JammersStatus
 // JammersStatus is a map with key type Long and value type JammerStatus
 value::Value* JammersStatus_toValue(const JammersStatus& _val);
-JammersStatus JammersStatus_fromValue(const value::Value* _node);
+void JammersStatus_fromValue(const value::Value* _node, JammersStatus& _val);
 		
 // -------------------------------------------------------- JammOp
 // JammOp is a structure
@@ -276,7 +276,7 @@ void JammOp_fromValue(const value::Value* _node, JammOp& _val);
 // -------------------------------------------------------- JammOperationList
 // JammOperationList is a vector of JammOp
 value::Value* JammOperationList_toValue(const JammOperationList& _val); 
-JammOperationList JammOperationList_fromValue(const value::Value* _node);
+void JammOperationList_fromValue(const value::Value* _node, JammOperationList& _val);
 		
 // -------------------------------------------------------- JammerOrder
 // JammerOrder is a structure
@@ -286,12 +286,12 @@ void JammerOrder_fromValue(const value::Value* _node, JammerOrder& _val);
 // -------------------------------------------------------- JammersOrders
 // JammersOrders is a map with key type Long and value type JammerOrder
 value::Value* JammersOrders_toValue(const JammersOrders& _val);
-JammersOrders JammersOrders_fromValue(const value::Value* _node);
+void JammersOrders_fromValue(const value::Value* _node, JammersOrders& _val);
 		
 // -------------------------------------------------------- JammerDefinitions
 // JammerDefinitions is a map with key type Long and value type JammerDefinition
 value::Value* JammerDefinitions_toValue(const JammerDefinitions& _val);
-JammerDefinitions JammerDefinitions_fromValue(const value::Value* _node);
+void JammerDefinitions_fromValue(const value::Value* _node, JammerDefinitions& _val);
 		
 // -------------------------------------------------------- LocalisationInit
 // LocalisationInit is a structure
@@ -321,7 +321,7 @@ void LocalisationEquipmentState_fromValue(const value::Value* _node, Localisatio
 // -------------------------------------------------------- LocDefinitions
 // LocDefinitions is a map with key type Long and value type LocalisationConst
 value::Value* LocDefinitions_toValue(const LocDefinitions& _val);
-LocDefinitions LocDefinitions_fromValue(const value::Value* _node);
+void LocDefinitions_fromValue(const value::Value* _node, LocDefinitions& _val);
 		
 // -------------------------------------------------------- Waypoint
 // Waypoint is a structure
@@ -331,7 +331,7 @@ void Waypoint_fromValue(const value::Value* _node, Waypoint& _val);
 // -------------------------------------------------------- NavigationPts
 // NavigationPts is a vector of Waypoint
 value::Value* NavigationPts_toValue(const NavigationPts& _val); 
-NavigationPts NavigationPts_fromValue(const value::Value* _node);
+void NavigationPts_fromValue(const value::Value* _node, NavigationPts& _val);
 		
 // -------------------------------------------------------- FlightConfig
 // FlightConfig is a structure
@@ -361,7 +361,7 @@ void SensorTechno_fromValue(const value::Value* _node, SensorTechno& _val);
 // -------------------------------------------------------- SensorTechnos
 // SensorTechnos is a vector of SensorTechno
 value::Value* SensorTechnos_toValue(const SensorTechnos& _val); 
-SensorTechnos SensorTechnos_fromValue(const value::Value* _node);
+void SensorTechnos_fromValue(const value::Value* _node, SensorTechnos& _val);
 		
 // -------------------------------------------------------- SensorDefinition
 // SensorDefinition is a structure
@@ -391,12 +391,12 @@ void SensorImage_fromValue(const value::Value* _node, SensorImage& _val);
 // -------------------------------------------------------- SensorImages
 // SensorImages is a vector of SensorImage
 value::Value* SensorImages_toValue(const SensorImages& _val); 
-SensorImages SensorImages_fromValue(const value::Value* _node);
+void SensorImages_fromValue(const value::Value* _node, SensorImages& _val);
 		
 // -------------------------------------------------------- SensorPlotVector
 // SensorPlotVector is a vector of SensorPlot
 value::Value* SensorPlotVector_toValue(const SensorPlotVector& _val); 
-SensorPlotVector SensorPlotVector_fromValue(const value::Value* _node);
+void SensorPlotVector_fromValue(const value::Value* _node, SensorPlotVector& _val);
 		
 // -------------------------------------------------------- SensorTrack
 // SensorTrack is a structure
@@ -406,7 +406,7 @@ void SensorTrack_fromValue(const value::Value* _node, SensorTrack& _val);
 // -------------------------------------------------------- SensorTracks
 // SensorTracks is a map with key type Long and value type SensorTrack
 value::Value* SensorTracks_toValue(const SensorTracks& _val);
-SensorTracks SensorTracks_fromValue(const value::Value* _node);
+void SensorTracks_fromValue(const value::Value* _node, SensorTracks& _val);
 		
 // -------------------------------------------------------- SensorStatus
 // SensorStatus is a structure
@@ -416,7 +416,7 @@ void SensorStatus_fromValue(const value::Value* _node, SensorStatus& _val);
 // -------------------------------------------------------- SensorsStatus
 // SensorsStatus is a map with key type Long and value type SensorStatus
 value::Value* SensorsStatus_toValue(const SensorsStatus& _val);
-SensorsStatus SensorsStatus_fromValue(const value::Value* _node);
+void SensorsStatus_fromValue(const value::Value* _node, SensorsStatus& _val);
 		
 // -------------------------------------------------------- SensorOrder
 // SensorOrder is a structure
@@ -426,7 +426,7 @@ void SensorOrder_fromValue(const value::Value* _node, SensorOrder& _val);
 // -------------------------------------------------------- SensorOrders
 // SensorOrders is a map with key type Long and value type SensorOrder
 value::Value* SensorOrders_toValue(const SensorOrders& _val);
-SensorOrders SensorOrders_fromValue(const value::Value* _node);
+void SensorOrders_fromValue(const value::Value* _node, SensorOrders& _val);
 		
 // -------------------------------------------------------- SGD
 // SGD is a structure
@@ -436,12 +436,12 @@ void SGD_fromValue(const value::Value* _node, SGD& _val);
 // -------------------------------------------------------- SensorMemory
 // SensorMemory is a map with key type Long and value type SGD
 value::Value* SensorMemory_toValue(const SensorMemory& _val);
-SensorMemory SensorMemory_fromValue(const value::Value* _node);
+void SensorMemory_fromValue(const value::Value* _node, SensorMemory& _val);
 		
 // -------------------------------------------------------- SensorDefinitions
 // SensorDefinitions is a map with key type Long and value type SensorDefinition
 value::Value* SensorDefinitions_toValue(const SensorDefinitions& _val);
-SensorDefinitions SensorDefinitions_fromValue(const value::Value* _node);
+void SensorDefinitions_fromValue(const value::Value* _node, SensorDefinitions& _val);
 		
 // -------------------------------------------------------- SAElementStatus
 // SAElementStatus is a structure
@@ -451,7 +451,7 @@ void SAElementStatus_fromValue(const value::Value* _node, SAElementStatus& _val)
 // -------------------------------------------------------- SAElementStatusList
 // SAElementStatusList is a map with key type Long and value type SAElementStatus
 value::Value* SAElementStatusList_toValue(const SAElementStatusList& _val);
-SAElementStatusList SAElementStatusList_fromValue(const value::Value* _node);
+void SAElementStatusList_fromValue(const value::Value* _node, SAElementStatusList& _val);
 		
 // -------------------------------------------------------- SAElementOrder
 // SAElementOrder is a structure
@@ -461,7 +461,7 @@ void SAElementOrder_fromValue(const value::Value* _node, SAElementOrder& _val);
 // -------------------------------------------------------- SAElementOrderList
 // SAElementOrderList is a map with key type Long and value type SAElementOrder
 value::Value* SAElementOrderList_toValue(const SAElementOrderList& _val);
-SAElementOrderList SAElementOrderList_fromValue(const value::Value* _node);
+void SAElementOrderList_fromValue(const value::Value* _node, SAElementOrderList& _val);
 		
 // -------------------------------------------------------- SASystemState
 // SASystemState is a structure
@@ -495,7 +495,7 @@ void NetworkMessageUserHeader_fromValue(const value::Value* _node, NetworkMessag
 		
 // -------------------------------------------------------- NetworkMessageUserData
 ///
-/// ERROR NetworkMessageUserData is unrecognized by the generator - org.eclipse.emf.ecore.impl.EClassImpl@188e507 (name: unionType) (instanceClassName: null) (abstract: false, interface: false)
+/// ERROR NetworkMessageUserData is unrecognized by the generator - org.eclipse.emf.ecore.impl.EClassImpl@12297aa (name: unionType) (instanceClassName: null) (abstract: false, interface: false)
 ///
 		
 // -------------------------------------------------------- NetworkMessage
@@ -506,27 +506,27 @@ void NetworkMessage_fromValue(const value::Value* _node, NetworkMessage& _val);
 // -------------------------------------------------------- NetworkMessageDeliveryReport
 // NetworkMessageDeliveryReport is a map with key type Long and value type Long
 value::Value* NetworkMessageDeliveryReport_toValue(const NetworkMessageDeliveryReport& _val);
-NetworkMessageDeliveryReport NetworkMessageDeliveryReport_fromValue(const value::Value* _node);
+void NetworkMessageDeliveryReport_fromValue(const value::Value* _node, NetworkMessageDeliveryReport& _val);
 		
 // -------------------------------------------------------- NetworkMessageDeliveryReports
 // NetworkMessageDeliveryReports is a map with key type Long and value type NetworkMessageDeliveryReport
 value::Value* NetworkMessageDeliveryReports_toValue(const NetworkMessageDeliveryReports& _val);
-NetworkMessageDeliveryReports NetworkMessageDeliveryReports_fromValue(const value::Value* _node);
+void NetworkMessageDeliveryReports_fromValue(const value::Value* _node, NetworkMessageDeliveryReports& _val);
 		
 // -------------------------------------------------------- NetworkList
 // NetworkList is a map with key type Long and value type Long
 value::Value* NetworkList_toValue(const NetworkList& _val);
-NetworkList NetworkList_fromValue(const value::Value* _node);
+void NetworkList_fromValue(const value::Value* _node, NetworkList& _val);
 		
 // -------------------------------------------------------- NetworkMessageList
 // NetworkMessageList is a vector of NetworkMessage
 value::Value* NetworkMessageList_toValue(const NetworkMessageList& _val); 
-NetworkMessageList NetworkMessageList_fromValue(const value::Value* _node);
+void NetworkMessageList_fromValue(const value::Value* _node, NetworkMessageList& _val);
 		
 // -------------------------------------------------------- NetworkDefinitions
 // NetworkDefinitions is a map with key type Long and value type NetworkDefinition
 value::Value* NetworkDefinitions_toValue(const NetworkDefinitions& _val);
-NetworkDefinitions NetworkDefinitions_fromValue(const value::Value* _node);
+void NetworkDefinitions_fromValue(const value::Value* _node, NetworkDefinitions& _val);
 		
 // -------------------------------------------------------- test
 // test is a structure
@@ -541,7 +541,7 @@ void TestMatlabStruct2_fromValue(const value::Value* _node, TestMatlabStruct2& _
 // -------------------------------------------------------- TestMatlabStruct2List
 // TestMatlabStruct2List is a vector of TestMatlabStruct2
 value::Value* TestMatlabStruct2List_toValue(const TestMatlabStruct2List& _val); 
-TestMatlabStruct2List TestMatlabStruct2List_fromValue(const value::Value* _node);
+void TestMatlabStruct2List_fromValue(const value::Value* _node, TestMatlabStruct2List& _val);
 		
 // -------------------------------------------------------- TestMatlabStruct
 // TestMatlabStruct is a structure
@@ -556,7 +556,7 @@ void TestJavaStruct2_fromValue(const value::Value* _node, TestJavaStruct2& _val)
 // -------------------------------------------------------- TestJavaStruct2List
 // TestJavaStruct2List is a vector of TestJavaStruct2
 value::Value* TestJavaStruct2List_toValue(const TestJavaStruct2List& _val); 
-TestJavaStruct2List TestJavaStruct2List_fromValue(const value::Value* _node);
+void TestJavaStruct2List_fromValue(const value::Value* _node, TestJavaStruct2List& _val);
 		
 // -------------------------------------------------------- TestJavaStruct
 // TestJavaStruct is a structure

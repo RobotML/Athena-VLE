@@ -118,19 +118,19 @@ public:
             if (event.onPort("jammerDefs"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				jammerDefs = JammerDefinitions_fromValue(&val);
+				JammerDefinitions_fromValue(&val, jammerDefs);
             }
             // 
             if (event.onPort("jammerStatusList"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				jammerStatusList = JammersStatus_fromValue(&val);
+				JammersStatus_fromValue(&val, jammerStatusList);
             }
             // 
             if (event.onPort("jammerOrderList"))
             {
 			    const vv::Value& val = event.getAttributeValue("hello");
-				jammerOrderList = JammersOrders_fromValue(&val);
+				JammersOrders_fromValue(&val, jammerOrderList);
             }
             // 
             if (event.onPort("interactions"))
