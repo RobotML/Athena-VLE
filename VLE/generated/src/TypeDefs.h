@@ -1057,11 +1057,11 @@ public:
 	static const unsigned int __FlightData;
 	void set_FlightData(const FlightData& d);
 	const FlightData* get_FlightData();
-	const bool is_FlightData() { return (type == __FlightData); }
+	bool is_FlightData() const { return (type == __FlightData); }
 	static const unsigned int __NavigationData;
 	void set_NavigationData(const NavigationData& d);
 	const NavigationData* get_NavigationData();
-	const bool is_NavigationData() { return (type == __NavigationData); }
+	bool is_NavigationData() const { return (type == __NavigationData); }
 	NetworkMessageUserData(const NetworkMessageUserData& _NetworkMessageUserData);
 	~NetworkMessageUserData();
 	NetworkMessageUserData& operator = (const NetworkMessageUserData& _NetworkMessageUserData);

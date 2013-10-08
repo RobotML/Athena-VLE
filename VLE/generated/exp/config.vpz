@@ -3,7 +3,7 @@
  <structures>
   <model name="m" type="coupled" x="0" y="0" width="1000" height="800" >
    <submodels>
-    <model name="Root" type="atomic" conditions="" dynamics="Root" observables="" x="647" y="485" width="50" height="190" >
+    <model name="Root" type="atomic" conditions="" dynamics="Root" observables="" x="272" y="364" width="50" height="190" >
       <in>
       </in>
       <out>
@@ -21,7 +21,7 @@
         <port name="networksPtr"/>
       </out>
     </model>
-    <model name="aircraft" type="atomic" conditions="" dynamics="Aircraft" observables="" x="-11" y="548" width="100" height="175" >
+    <model name="aircraft" type="atomic" conditions="" dynamics="Aircraft" observables="" x="765" y="472" width="100" height="175" >
       <in>
         <port name="statusList"/>
         <port name="time"/>
@@ -42,7 +42,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="loc" type="atomic" conditions="" dynamics="Localisation" observables="" x="606" y="105" width="100" height="115" >
+    <model name="loc" type="atomic" conditions="" dynamics="Localisation" observables="" x="612" y="516" width="100" height="115" >
       <in>
         <port name="loc_init"/>
         <port name="loc_state"/>
@@ -61,7 +61,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="mms" type="atomic" conditions="" dynamics="MMS" observables="" x="273" y="481" width="100" height="100" >
+    <model name="mms" type="atomic" conditions="" dynamics="MMS" observables="" x="69" y="594" width="100" height="100" >
       <in>
         <port name="loc_state"/>
         <port name="nav_state"/>
@@ -79,7 +79,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="monitor" type="atomic" conditions="" dynamics="MMSMonitor" observables="" x="315" y="713" width="100" height="100" >
+    <model name="monitor" type="atomic" conditions="" dynamics="MMSMonitor" observables="" x="781" y="673" width="100" height="100" >
       <in>
         <port name="loc_state"/>
         <port name="nav_state"/>
@@ -93,7 +93,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="executor" type="atomic" conditions="" dynamics="MMSExecute" observables="" x="398" y="54" width="100" height="70" >
+    <model name="executor" type="atomic" conditions="" dynamics="MMSExecute" observables="" x="927" y="47" width="100" height="70" >
       <in>
         <port name="NID"/>
         <port name="time"/>
@@ -105,7 +105,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="manager" type="atomic" conditions="" dynamics="MMSManage" observables="" x="280" y="107" width="100" height="70" >
+    <model name="manager" type="atomic" conditions="" dynamics="MMSManage" observables="" x="200" y="461" width="100" height="70" >
       <in>
         <port name="NID"/>
         <port name="time"/>
@@ -117,7 +117,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="updater" type="atomic" conditions="" dynamics="MMSUpdate" observables="" x="690" y="561" width="100" height="70" >
+    <model name="updater" type="atomic" conditions="" dynamics="MMSUpdate" observables="" x="329" y="710" width="100" height="70" >
       <in>
         <port name="NID"/>
         <port name="time"/>
@@ -129,7 +129,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="basicFlying" type="atomic" conditions="" dynamics="BasicFlying" observables="" x="931" y="304" width="100" height="70" >
+    <model name="basicFlying" type="atomic" conditions="" dynamics="BasicFlying" observables="" x="636" y="280" width="100" height="70" >
       <in>
         <port name="NID"/>
         <port name="time"/>
@@ -141,7 +141,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="nav" type="atomic" conditions="" dynamics="Navigation" observables="" x="653" y="369" width="100" height="115" >
+    <model name="nav" type="atomic" conditions="" dynamics="Navigation" observables="" x="286" y="404" width="100" height="115" >
       <in>
         <port name="pstate"/>
         <port name="NID"/>
@@ -159,7 +159,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="flight" type="atomic" conditions="" dynamics="Flight" observables="" x="563" y="494" width="100" height="190" >
+    <model name="flight" type="atomic" conditions="" dynamics="Flight" observables="" x="640" y="440" width="100" height="190" >
       <in>
         <port name="loc_init"/>
         <port name="loc_state"/>
@@ -180,7 +180,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="sensors" type="atomic" conditions="" dynamics="Sensors" observables="" x="240" y="406" width="100" height="115" >
+    <model name="sensors" type="atomic" conditions="" dynamics="Sensors" observables="" x="755" y="510" width="100" height="115" >
       <in>
         <port name="NID"/>
         <port name="time"/>
@@ -197,7 +197,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="radar" type="atomic" conditions="" dynamics="Radar" observables="" x="175" y="393" width="100" height="160" >
+    <model name="radar" type="atomic" conditions="" dynamics="Radar" observables="" x="-49" y="97" width="100" height="160" >
       <in>
         <port name="ordersList"/>
         <port name="interactions"/>
@@ -219,7 +219,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="esm" type="atomic" conditions="" dynamics="Esm" observables="" x="244" y="431" width="100" height="160" >
+    <model name="esm" type="atomic" conditions="" dynamics="Esm" observables="" x="102" y="694" width="100" height="160" >
       <in>
         <port name="ordersList"/>
         <port name="interactions"/>
@@ -241,7 +241,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="autoprot" type="atomic" conditions="" dynamics="Protection" observables="" x="773" y="415" width="100" height="85" >
+    <model name="autoprot" type="atomic" conditions="" dynamics="Protection" observables="" x="532" y="333" width="100" height="85" >
       <in>
         <port name="NID"/>
         <port name="time"/>
@@ -256,7 +256,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="jammers" type="atomic" conditions="" dynamics="Jammer" observables="" x="816" y="96" width="100" height="130" >
+    <model name="jammers" type="atomic" conditions="" dynamics="Jammer" observables="" x="58" y="137" width="100" height="130" >
       <in>
         <port name="jammerDefs"/>
         <port name="jammerStatusList"/>
@@ -276,7 +276,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="comms" type="atomic" conditions="" dynamics="Communications" observables="" x="285" y="589" width="100" height="175" >
+    <model name="comms" type="atomic" conditions="" dynamics="Communications" observables="" x="578" y="196" width="100" height="175" >
       <in>
         <port name="networksPtr"/>
         <port name="nav_msgCategoryId"/>
@@ -298,7 +298,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="weapsys" type="atomic" conditions="" dynamics="WeapSys" observables="" x="704" y="250" width="100" height="70" >
+    <model name="weapsys" type="atomic" conditions="" dynamics="WeapSys" observables="" x="162" y="447" width="100" height="70" >
       <in>
         <port name="NID"/>
         <port name="time"/>
@@ -310,7 +310,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="saSystems" type="atomic" conditions="" dynamics="SASystem" observables="" x="104" y="177" width="100" height="190" >
+    <model name="saSystems" type="atomic" conditions="" dynamics="SASystem" observables="" x="531" y="-17" width="100" height="190" >
       <in>
         <port name="time"/>
         <port name="timestep"/>
@@ -331,7 +331,7 @@
         <port name="btrue"/>
       </out>
     </model>
-    <model name="components" type="atomic" conditions="" dynamics="SAMComponent" observables="" x="314" y="18" width="100" height="235" >
+    <model name="components" type="atomic" conditions="" dynamics="SAMComponent" observables="" x="288" y="420" width="100" height="235" >
       <in>
         <port name="statusList"/>
         <port name="ordersList"/>

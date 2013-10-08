@@ -53,16 +53,16 @@ void init_Real(Real& data) {
 
 		
 // -------------------------------------------------------- Vec3
-void init_Vec3(Vec3& data) {} 
+void init_Vec3(Vec3& /*data*/) {} 
 		
 // -------------------------------------------------------- Vec5
-void init_Vec5(Vec5& data) {} 
+void init_Vec5(Vec5& /*data*/) {} 
 		
 // -------------------------------------------------------- VecX
 VecX VecX_allocate(unsigned int x, unsigned int y) {
 	return new boost::multi_array<Real, 2>(boost::extents [x][y]);
 }
-void init_VecX(VecX& data) {} 
+void init_VecX(VecX& /*data*/) {} 
 		
 // -------------------------------------------------------- gisement
 void init_gisement(gisement& data) {
@@ -78,10 +78,10 @@ void init_site(site& data) {
 VecOne VecOne_allocate(unsigned int x) {
 	return new boost::multi_array<gisement, 1>(boost::extents [x]);
 }
-void init_VecOne(VecOne& data) {} 
+void init_VecOne(VecOne& /*data*/) {} 
 		
 // -------------------------------------------------------- VecY
-void init_VecY(VecY& data) {} 
+void init_VecY(VecY& /*data*/) {} 
 		
 // -------------------------------------------------------- test3
 test3::test3(const test3& _test3) {
@@ -101,13 +101,13 @@ void init_test3(test3& data) {
 }
 		
 // -------------------------------------------------------- Ints
-void init_Ints(Ints& data) {}
+void init_Ints(Ints& /*data*/) {}
 		
 // -------------------------------------------------------- Longs
-void init_Longs(Longs& data) {}
+void init_Longs(Longs& /*data*/) {}
 		
 // -------------------------------------------------------- Reals
-void init_Reals(Reals& data) {}
+void init_Reals(Reals& /*data*/) {}
 		
 // -------------------------------------------------------- EntityType
 void init_EntityType(EntityType& data) {
@@ -163,7 +163,7 @@ void init_EquipmentStatus(EquipmentStatus& data) {
 }
 		
 // -------------------------------------------------------- EquipmentStatusList
-void init_EquipmentStatusList(EquipmentStatusList& data) {}
+void init_EquipmentStatusList(EquipmentStatusList& /*data*/) {}
 		
 // -------------------------------------------------------- ExternalInput
 ExternalInput::ExternalInput(const ExternalInput& _ExternalInput) {
@@ -187,13 +187,13 @@ void init_ExternalInput(ExternalInput& data) {
 }
 		
 // -------------------------------------------------------- vExternalInput
-void init_vExternalInput(vExternalInput& data) {}
+void init_vExternalInput(vExternalInput& /*data*/) {}
 		
 // -------------------------------------------------------- ExternalInputListForOneTypeOfEquipment
-void init_ExternalInputListForOneTypeOfEquipment(ExternalInputListForOneTypeOfEquipment& data) {}
+void init_ExternalInputListForOneTypeOfEquipment(ExternalInputListForOneTypeOfEquipment& /*data*/) {}
 		
 // -------------------------------------------------------- ExternalInputList
-void init_ExternalInputList(ExternalInputList& data) {}
+void init_ExternalInputList(ExternalInputList& /*data*/) {}
 		
 // -------------------------------------------------------- EntityState
 EntityState::EntityState(const EntityState& _EntityState) {
@@ -227,7 +227,7 @@ void init_EntityState(EntityState& data) {
 }
 		
 // -------------------------------------------------------- EntityStates
-void init_EntityStates(EntityStates& data) {}
+void init_EntityStates(EntityStates& /*data*/) {}
 		
 // -------------------------------------------------------- EmitterBeam
 EmitterBeam::EmitterBeam(const EmitterBeam& _EmitterBeam) {
@@ -253,7 +253,7 @@ void init_EmitterBeam(EmitterBeam& data) {
 }
 		
 // -------------------------------------------------------- Beams
-void init_Beams(Beams& data) {}
+void init_Beams(Beams& /*data*/) {}
 		
 // -------------------------------------------------------- EmitterState
 EmitterState::EmitterState(const EmitterState& _EmitterState) {
@@ -281,7 +281,7 @@ void init_EmitterState(EmitterState& data) {
 }
 		
 // -------------------------------------------------------- EmitterStates
-void init_EmitterStates(EmitterStates& data) {}
+void init_EmitterStates(EmitterStates& /*data*/) {}
 		
 // -------------------------------------------------------- JammerState
 JammerState::JammerState(const JammerState& _JammerState) {
@@ -315,7 +315,7 @@ void init_JammerState(JammerState& data) {
 }
 		
 // -------------------------------------------------------- JammerStates
-void init_JammerStates(JammerStates& data) {}
+void init_JammerStates(JammerStates& /*data*/) {}
 		
 // -------------------------------------------------------- Detonation
 Detonation::Detonation(const Detonation& _Detonation) {
@@ -341,7 +341,7 @@ void init_Detonation(Detonation& data) {
 }
 		
 // -------------------------------------------------------- Detonations
-void init_Detonations(Detonations& data) {}
+void init_Detonations(Detonations& /*data*/) {}
 		
 // -------------------------------------------------------- EnvironmentInteractions
 EnvironmentInteractions::EnvironmentInteractions(const EnvironmentInteractions& _EnvironmentInteractions) {
@@ -405,10 +405,10 @@ void init_AngularDelta(AngularDelta& data) {
 }
 		
 // -------------------------------------------------------- SensorAngularBounds
-void init_SensorAngularBounds(SensorAngularBounds& data) {}
+void init_SensorAngularBounds(SensorAngularBounds& /*data*/) {}
 		
 // -------------------------------------------------------- SensorAngularDelta
-void init_SensorAngularDelta(SensorAngularDelta& data) {}
+void init_SensorAngularDelta(SensorAngularDelta& /*data*/) {}
 		
 // -------------------------------------------------------- JammerDefinition
 JammerDefinition::JammerDefinition(const JammerDefinition& _JammerDefinition) {
@@ -459,7 +459,7 @@ void init_EmitterJammed(EmitterJammed& data) {
 }
 		
 // -------------------------------------------------------- EmitterJammList
-void init_EmitterJammList(EmitterJammList& data) {}
+void init_EmitterJammList(EmitterJammList& /*data*/) {}
 		
 // -------------------------------------------------------- JammerStatus
 JammerStatus::JammerStatus(const JammerStatus& _JammerStatus) {
@@ -495,7 +495,7 @@ void init_JammerStatus(JammerStatus& data) {
 }
 		
 // -------------------------------------------------------- JammersStatus
-void init_JammersStatus(JammersStatus& data) {}
+void init_JammersStatus(JammersStatus& /*data*/) {}
 		
 // -------------------------------------------------------- JammOp
 JammOp::JammOp(const JammOp& _JammOp) {
@@ -517,7 +517,7 @@ void init_JammOp(JammOp& data) {
 }
 		
 // -------------------------------------------------------- JammOperationList
-void init_JammOperationList(JammOperationList& data) {}
+void init_JammOperationList(JammOperationList& /*data*/) {}
 		
 // -------------------------------------------------------- JammerOrder
 JammerOrder::JammerOrder(const JammerOrder& _JammerOrder) {
@@ -543,10 +543,10 @@ void init_JammerOrder(JammerOrder& data) {
 }
 		
 // -------------------------------------------------------- JammersOrders
-void init_JammersOrders(JammersOrders& data) {}
+void init_JammersOrders(JammersOrders& /*data*/) {}
 		
 // -------------------------------------------------------- JammerDefinitions
-void init_JammerDefinitions(JammerDefinitions& data) {}
+void init_JammerDefinitions(JammerDefinitions& /*data*/) {}
 		
 // -------------------------------------------------------- LocalisationInit
 LocalisationInit::LocalisationInit(const LocalisationInit& _LocalisationInit) {
@@ -661,7 +661,7 @@ void init_LocalisationEquipmentState(LocalisationEquipmentState& data) {
 }
 		
 // -------------------------------------------------------- LocDefinitions
-void init_LocDefinitions(LocDefinitions& data) {}
+void init_LocDefinitions(LocDefinitions& /*data*/) {}
 		
 // -------------------------------------------------------- Waypoint
 Waypoint::Waypoint(const Waypoint& _Waypoint) {
@@ -713,7 +713,7 @@ void init_Waypoint(Waypoint& data) {
 }
 		
 // -------------------------------------------------------- NavigationPts
-void init_NavigationPts(NavigationPts& data) {}
+void init_NavigationPts(NavigationPts& /*data*/) {}
 		
 // -------------------------------------------------------- FlightConfig
 FlightConfig::FlightConfig(const FlightConfig& _FlightConfig) {
@@ -853,7 +853,7 @@ void init_SensorTechno(SensorTechno& data) {
 }
 		
 // -------------------------------------------------------- SensorTechnos
-void init_SensorTechnos(SensorTechnos& data) {}
+void init_SensorTechnos(SensorTechnos& /*data*/) {}
 		
 // -------------------------------------------------------- SensorDefinition
 SensorDefinition::SensorDefinition(const SensorDefinition& _SensorDefinition) {
@@ -1011,10 +1011,10 @@ void init_SensorImage(SensorImage& data) {
 }
 		
 // -------------------------------------------------------- SensorImages
-void init_SensorImages(SensorImages& data) {}
+void init_SensorImages(SensorImages& /*data*/) {}
 		
 // -------------------------------------------------------- SensorPlotVector
-void init_SensorPlotVector(SensorPlotVector& data) {}
+void init_SensorPlotVector(SensorPlotVector& /*data*/) {}
 		
 // -------------------------------------------------------- SensorTrack
 SensorTrack::SensorTrack(const SensorTrack& _SensorTrack) {
@@ -1048,7 +1048,7 @@ void init_SensorTrack(SensorTrack& data) {
 }
 		
 // -------------------------------------------------------- SensorTracks
-void init_SensorTracks(SensorTracks& data) {}
+void init_SensorTracks(SensorTracks& /*data*/) {}
 		
 // -------------------------------------------------------- SensorStatus
 SensorStatus::SensorStatus(const SensorStatus& _SensorStatus) {
@@ -1080,7 +1080,7 @@ void init_SensorStatus(SensorStatus& data) {
 }
 		
 // -------------------------------------------------------- SensorsStatus
-void init_SensorsStatus(SensorsStatus& data) {}
+void init_SensorsStatus(SensorsStatus& /*data*/) {}
 		
 // -------------------------------------------------------- SensorOrder
 SensorOrder::SensorOrder(const SensorOrder& _SensorOrder) {
@@ -1112,7 +1112,7 @@ void init_SensorOrder(SensorOrder& data) {
 }
 		
 // -------------------------------------------------------- SensorOrders
-void init_SensorOrders(SensorOrders& data) {}
+void init_SensorOrders(SensorOrders& /*data*/) {}
 		
 // -------------------------------------------------------- SGD
 SGD::SGD(const SGD& _SGD) {
@@ -1158,10 +1158,10 @@ void init_SGD(SGD& data) {
 }
 		
 // -------------------------------------------------------- SensorMemory
-void init_SensorMemory(SensorMemory& data) {}
+void init_SensorMemory(SensorMemory& /*data*/) {}
 		
 // -------------------------------------------------------- SensorDefinitions
-void init_SensorDefinitions(SensorDefinitions& data) {}
+void init_SensorDefinitions(SensorDefinitions& /*data*/) {}
 		
 // -------------------------------------------------------- SAElementStatus
 SAElementStatus::SAElementStatus(const SAElementStatus& _SAElementStatus) {
@@ -1202,7 +1202,7 @@ void init_SAElementStatus(SAElementStatus& data) {
 }
 		
 // -------------------------------------------------------- SAElementStatusList
-void init_SAElementStatusList(SAElementStatusList& data) {}
+void init_SAElementStatusList(SAElementStatusList& /*data*/) {}
 		
 // -------------------------------------------------------- SAElementOrder
 SAElementOrder::SAElementOrder(const SAElementOrder& _SAElementOrder) {
@@ -1226,7 +1226,7 @@ void init_SAElementOrder(SAElementOrder& data) {
 }
 		
 // -------------------------------------------------------- SAElementOrderList
-void init_SAElementOrderList(SAElementOrderList& data) {}
+void init_SAElementOrderList(SAElementOrderList& /*data*/) {}
 		
 // -------------------------------------------------------- SASystemState
 SASystemState::SASystemState(const SASystemState& _SASystemState) {
@@ -1423,7 +1423,7 @@ NetworkMessageUserData& NetworkMessageUserData::operator = (const NetworkMessage
 	if (type==__NavigationData) _NavigationData_ =  u._NavigationData_;
 	return *this;
 }
-void init_NetworkMessageUserData(NetworkMessageUserData& data) { }
+void init_NetworkMessageUserData(NetworkMessageUserData& /*data*/) { }
 		
 // -------------------------------------------------------- NetworkMessage
 NetworkMessage::NetworkMessage(const NetworkMessage& _NetworkMessage) {
@@ -1445,19 +1445,19 @@ void init_NetworkMessage(NetworkMessage& data) {
 }
 		
 // -------------------------------------------------------- NetworkMessageDeliveryReport
-void init_NetworkMessageDeliveryReport(NetworkMessageDeliveryReport& data) {}
+void init_NetworkMessageDeliveryReport(NetworkMessageDeliveryReport& /*data*/) {}
 		
 // -------------------------------------------------------- NetworkMessageDeliveryReports
-void init_NetworkMessageDeliveryReports(NetworkMessageDeliveryReports& data) {}
+void init_NetworkMessageDeliveryReports(NetworkMessageDeliveryReports& /*data*/) {}
 		
 // -------------------------------------------------------- NetworkList
-void init_NetworkList(NetworkList& data) {}
+void init_NetworkList(NetworkList& /*data*/) {}
 		
 // -------------------------------------------------------- NetworkMessageList
-void init_NetworkMessageList(NetworkMessageList& data) {}
+void init_NetworkMessageList(NetworkMessageList& /*data*/) {}
 		
 // -------------------------------------------------------- NetworkDefinitions
-void init_NetworkDefinitions(NetworkDefinitions& data) {}
+void init_NetworkDefinitions(NetworkDefinitions& /*data*/) {}
 		
 // -------------------------------------------------------- test
 test::test(const test& _test) {
@@ -1496,7 +1496,7 @@ void init_TestMatlabStruct2(TestMatlabStruct2& data) {
 }
 		
 // -------------------------------------------------------- TestMatlabStruct2List
-void init_TestMatlabStruct2List(TestMatlabStruct2List& data) {}
+void init_TestMatlabStruct2List(TestMatlabStruct2List& /*data*/) {}
 		
 // -------------------------------------------------------- TestMatlabStruct
 TestMatlabStruct::TestMatlabStruct(const TestMatlabStruct& _TestMatlabStruct) {
@@ -1541,7 +1541,7 @@ void init_TestJavaStruct2(TestJavaStruct2& data) {
 }
 		
 // -------------------------------------------------------- TestJavaStruct2List
-void init_TestJavaStruct2List(TestJavaStruct2List& data) {}
+void init_TestJavaStruct2List(TestJavaStruct2List& /*data*/) {}
 		
 // -------------------------------------------------------- TestJavaStruct
 TestJavaStruct::TestJavaStruct(const TestJavaStruct& _TestJavaStruct) {

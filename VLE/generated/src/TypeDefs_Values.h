@@ -495,7 +495,7 @@ void NetworkMessageUserHeader_fromValue(const value::Value* _node, NetworkMessag
 		
 // -------------------------------------------------------- NetworkMessageUserData
 ///
-/// ERROR NetworkMessageUserData is unrecognized by the generator - org.eclipse.emf.ecore.impl.EClassImpl@12297aa (name: unionType) (instanceClassName: null) (abstract: false, interface: false)
+/// ERROR NetworkMessageUserData is unrecognized by the generator - org.eclipse.emf.ecore.impl.EClassImpl@1cd6b3c (name: unionType) (instanceClassName: null) (abstract: false, interface: false)
 ///
 		
 // -------------------------------------------------------- NetworkMessage
