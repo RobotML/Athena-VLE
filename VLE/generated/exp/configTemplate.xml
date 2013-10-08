@@ -1,0 +1,5 @@
+<config>
+	<user-libraries>
+	<library>../lib/libStub_BasicFlying.so</library>
+	</user-libraries>
+</config>
