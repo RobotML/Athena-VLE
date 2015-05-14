@@ -8,4 +8,4 @@ It was decided thus to develop the generation using xtend to the *VLE* target co
 
 * **Athena**: *Athena* is a language defined by Dasssault Aviation in the 2000 in order to allow modelling of problems separated from their implementation. The specification of the generator starts from ... web page.
 
-* **VLE**: *VLE* means Virtual Laboratory Environment and is a executable framework using the DEVS theory in order to represent the modelling of systems. This framework has been developped by INRA in order to help aggregate complex models into one simulation. The specification of the generator starts from ... web page.
+* **VLE**: *VLE* means Virtual Laboratory Environment and is a executable framework using the DEVS theory in order to represent the modelling of systems. This framework has been developped by INRA in order to help aggregate complex models into one simulation. The specification of the generator starts from https://github.com/RobotML/Athena-VLE/wiki/vleSpecification web page.
