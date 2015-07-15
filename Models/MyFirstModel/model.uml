@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:RobotML="http://Papyrus/RobotML/1" xmlns:RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes="http:///RobotMLLibraries/RobotML_ModelLibrary/RobotML_DataTypes/geometry_datatypes.ecore" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_SolxcO3BEeS6pbXDTNucaw" name="RobotMLModel">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TBOT4O3BEeS6pbXDTNucaw">
+      <importedPackage xmi:type="uml:Package" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_wyS6gAH-EeC_ZLzLQhW-TQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TBPiAO3BEeS6pbXDTNucaw">
+      <importedPackage xmi:type="uml:Package" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#__xA6YAHvEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TBQwIO3BEeS6pbXDTNucaw">
+      <importedPackage xmi:type="uml:Package" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_Df4_4AHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TBRXMO3BEeS6pbXDTNucaw">
+      <importedPackage xmi:type="uml:Package" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_Go5_QAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TBSlUO3BEeS6pbXDTNucaw">
+      <importedPackage xmi:type="uml:Package" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_JSoakAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TBTMYO3BEeS6pbXDTNucaw">
+      <importedPackage xmi:type="uml:Package" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_MlyNYAHwEeCQQOKrhO_fIQ"/>
+    </packageImport>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_TBUagO3BEeS6pbXDTNucaw">
+      <importedPackage xmi:type="uml:Package" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_QJC2AKxYEeCJD46GtDsABA"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_xLf4oCTAEeW2GJ7TDfk7UA" name="EEngineOrders">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_An3gACTBEeW2GJ7TDfk7UA" name="OFF">
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_An3gASTBEeW2GJ7TDfk7UA" name="OFF"/>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ff-ecCTBEeW2GJ7TDfk7UA" name="ON">
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_Ff-ecSTBEeW2GJ7TDfk7UA" name="ON" value="1"/>
+      </ownedLiteral>
+    </packagedElement>
+    <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_GQd1UCTDEeW2GJ7TDfk7UA" name="InstanceCarDef" classifier="_3xPfEO3BEeS6pbXDTNucaw"/>
+    <packagedElement xmi:type="uml:InstanceValue" xmi:id="_OL1JYCTDEeW2GJ7TDfk7UA" name="InstanceCarVal" type="_3xPfEO3BEeS6pbXDTNucaw" instance="_GQd1UCTDEeW2GJ7TDfk7UA"/>
+    <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_ng4tICTDEeW2GJ7TDfk7UA" name="InstanceECUDef" classifier="_gZrWsCS_EeW2GJ7TDfk7UA"/>
+    <packagedElement xmi:type="uml:InstanceSpecification" xmi:id="_tWqNsCTDEeW2GJ7TDfk7UA" name="InstanceEngineDef" classifier="_kb0WcCS_EeW2GJ7TDfk7UA"/>
+    <packagedElement xmi:type="uml:InstanceValue" xmi:id="_FvfZwCTEEeW2GJ7TDfk7UA" name="InstanceECUVal" type="_gZrWsCS_EeW2GJ7TDfk7UA" instance="_ng4tICTDEeW2GJ7TDfk7UA"/>
+    <packagedElement xmi:type="uml:InstanceValue" xmi:id="_KKMDcCTEEeW2GJ7TDfk7UA" name="InstanceEngineVal" type="_kb0WcCS_EeW2GJ7TDfk7UA" instance="_tWqNsCTDEeW2GJ7TDfk7UA"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_uXGhkCTEEeW2GJ7TDfk7UA" name="Env">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_yVYVACTEEeW2GJ7TDfk7UA" name="Contact" aggregation="composite">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+        <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_9R9XUCTEEeW2GJ7TDfk7UA" name="Contact"/>
+      </ownedAttribute>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_3xPfEO3BEeS6pbXDTNucaw" name="Car">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_JSyqQO3CEeS6pbXDTNucaw" name="Contact" aggregation="composite">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+          <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_dB_zwCTAEeW2GJ7TDfk7UA" name="contactState"/>
+        </ownedAttribute>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_sAmroCTBEeW2GJ7TDfk7UA" name="Connector1">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_sAq9ECTBEeW2GJ7TDfk7UA" role="_JSyqQO3CEeS6pbXDTNucaw"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_sArkICTBEeW2GJ7TDfk7UA" role="_y8r-4CS_EeW2GJ7TDfk7UA"/>
+        </ownedConnector>
+        <ownedConnector xmi:type="uml:Connector" xmi:id="_tMLG4CTBEeW2GJ7TDfk7UA" name="Connector2">
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_tMLt8CTBEeW2GJ7TDfk7UA" role="_KAB-sCTAEeW2GJ7TDfk7UA"/>
+          <end xmi:type="uml:ConnectorEnd" xmi:id="_tMMVACTBEeW2GJ7TDfk7UA" role="_NKAnYCTAEeW2GJ7TDfk7UA"/>
+        </ownedConnector>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_gZrWsCS_EeW2GJ7TDfk7UA" name="ECU">
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_y8r-4CS_EeW2GJ7TDfk7UA" name="Contact" aggregation="composite">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://Robotml_PROFILES/RobotMLPlatformLibraries.uml#_NZnTsAIUEeCVrLEBH5ejnQ"/>
+            <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_oJOm4CTAEeW2GJ7TDfk7UA" name="contactState"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_KAB-sCTAEeW2GJ7TDfk7UA" name="Cmds" type="_xLf4oCTAEeW2GJ7TDfk7UA" aggregation="composite">
+            <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_OQYkICTBEeW2GJ7TDfk7UA" name="OFF"/>
+          </ownedAttribute>
+        </nestedClassifier>
+        <nestedClassifier xmi:type="uml:Class" xmi:id="_kb0WcCS_EeW2GJ7TDfk7UA" name="EngineSystem">
+          <ownedAttribute xmi:type="uml:Port" xmi:id="_NKAnYCTAEeW2GJ7TDfk7UA" name="Orders" type="_xLf4oCTAEeW2GJ7TDfk7UA" aggregation="composite">
+            <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_QWIIoCTBEeW2GJ7TDfk7UA" name="OFF"/>
+          </ownedAttribute>
+        </nestedClassifier>
+      </nestedClassifier>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_TBHmMO3BEeS6pbXDTNucaw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_TBJbYO3BEeS6pbXDTNucaw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://Papyrus/RobotML/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Robotml_PROFILES/RobotMLProfile.profile.uml#_3QOHEPcEEd-J06U5HM_o-Q"/>
+    </profileApplication>
+  </uml:Model>
+  <RobotML:RoboticSystem xmi:id="_3yGasO3BEeS6pbXDTNucaw" base_Class="_3xPfEO3BEeS6pbXDTNucaw" libraryPath="." libraryComponentName="Car" alias="Car">
+    <localPosition xmi:type="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes:Point32" xmi:id="_aDHfoABUEeWdcu0VKQuSjg"/>
+    <localOrientation xmi:type="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes:Point32" xmi:id="_aZweAABUEeWdcu0VKQuSjg"/>
+  </RobotML:RoboticSystem>
+  <RobotML:DataFlowPort xmi:id="_JUEcoO3CEeS6pbXDTNucaw" base_Port="_JSyqQO3CEeS6pbXDTNucaw"/>
+  <RobotML:Robot xmi:id="_gaNiMCS_EeW2GJ7TDfk7UA" base_Class="_gZrWsCS_EeW2GJ7TDfk7UA" libraryPath="." libraryComponentName="ECUCar" alias="ECUCar" width="1.0"/>
+  <RobotML:EngineSystem xmi:id="_kcUFsCS_EeW2GJ7TDfk7UA" base_Class="_kb0WcCS_EeW2GJ7TDfk7UA" alias="Engine" vehicleTraction="yes" maxEngineForce="10.0" maxBreakingForce="8.0" maxAllowedSteering="1.0" maxAllowedVelocity="100.0" gear_ration="0.7">
+    <localPosition xmi:type="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes:Point32" xmi:id="_gTxboCTCEeW2GJ7TDfk7UA"/>
+    <localOrientation xmi:type="RobotMLLibraries.RobotML_ModelLibrary.RobotML_DataTypes.geometry_datatypes:Point32" xmi:id="_hsp6ICTCEeW2GJ7TDfk7UA"/>
+  </RobotML:EngineSystem>
+  <RobotML:DataFlowPort xmi:id="_y9Iq0CS_EeW2GJ7TDfk7UA" base_Port="_y8r-4CS_EeW2GJ7TDfk7UA"/>
+  <RobotML:DataFlowPort xmi:id="_KAiVACTAEeW2GJ7TDfk7UA" base_Port="_KAB-sCTAEeW2GJ7TDfk7UA" direction="out"/>
+  <RobotML:DataFlowPort xmi:id="_NKiy4CTAEeW2GJ7TDfk7UA" base_Port="_NKAnYCTAEeW2GJ7TDfk7UA"/>
+  <RobotML:Environment xmi:id="_uXdt8CTEEeW2GJ7TDfk7UA" base_Class="_uXGhkCTEEeW2GJ7TDfk7UA"/>
+  <RobotML:DataFlowPort xmi:id="_yVyksCTEEeW2GJ7TDfk7UA" base_Port="_yVYVACTEEeW2GJ7TDfk7UA"/>
+</xmi:XMI>
